@@ -6,14 +6,19 @@ class SearchInput extends Component {
     date: ''
   }
 
+  handleOnSubmit = (event) => {
+    event.preventDefault()
+  }
+
 
   render(){
     return (
       <div>
-        <form>
+        <form onSubmit={this.handleOnSubmit}>
           <input
             type="date">
           </input>
+
           <input type="submit" value="search">
           </input>
         </form>
