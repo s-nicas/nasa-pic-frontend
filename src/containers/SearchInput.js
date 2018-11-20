@@ -10,10 +10,10 @@ class SearchInput extends Component {
     this.setState({
       date: event.target.value
     })
-// working 
-    return fetch(`https://api.nasa.gov/planetary/apod?date=${this.state.date}&hd=false&api_key=s773cGTT3VGPiJQZ9Hx0I1l4Nv07JiihqIYQohKf`)
-    .then(response => response.json())
-    .then(data => console.log(data))
+// working
+    // return fetch(`https://api.nasa.gov/planetary/apod?date=${this.state.date}&hd=false&api_key=`)
+    // .then(response => response.json())
+    // .then(data => console.log(data))
 
 
   }
@@ -21,6 +21,9 @@ class SearchInput extends Component {
 
   handleOnSubmit = (event) => {
     event.preventDefault()
+     this.props.fetchPhoto(this.state.date)
+    debugger
+
   }
 
 
