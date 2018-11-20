@@ -9,7 +9,15 @@ class SearchInput extends Component {
 
   render(){
     return (
-
+      <div>
+        <form>
+          <input
+            type="date">
+          </input>
+          <input type="submit" value="search">
+          </input>
+        </form>
+      </div>
     )
   }
 }
