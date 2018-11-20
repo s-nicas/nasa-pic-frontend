@@ -8,7 +8,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <SearchInput photo={this.props.photo}  fetchPhoto={this.props.fetchPhoto()}/>
+          <SearchInput/>
         </header>
       </div>
     );
