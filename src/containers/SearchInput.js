@@ -2,18 +2,20 @@ import React, {Component} from 'react'
 
 
 class SearchInput extends Component {
-  state ={
-    date: ''
-  }
+  constructor(props) {
+   super(props);
+   this.state = {date: ''};
+ }
+  // state ={
+  //   date: ''
+  // }
 
   handleOnChange = (event) => {
     this.setState({
       date: event.target.value
     })
 // working
-    // return fetch(`https://api.nasa.gov/planetary/apod?date=${this.state.date}&hd=false&api_key=`)
-    // .then(response => response.json())
-    // .then(data => console.log(data))
+
 
 
   }
@@ -21,8 +23,12 @@ class SearchInput extends Component {
 
   handleOnSubmit = (event) => {
     event.preventDefault()
-     this.props.fetchPhoto(this.state.date)
-    debugger
+
+     this.props.fetchPhoto()
+     debugger
+     // return fetch(`https://api.nasa.gov/planetary/apod?date=${this.state.date}&hd=false&api_key=s773cGTT3VGPiJQZ9Hx0I1l4Nv07JiihqIYQohKf`)
+     // .then(response => response.json())
+     // .then(data => console.log(data))
 
   }
 
@@ -30,11 +36,11 @@ class SearchInput extends Component {
   render(){
     return (
       <div>
-        <form onSubmit={this.handleOnSubmit}>
+        <form onSubmit={(event) => this.handleOnSubmit(event)}>
           <input
             type="date"
             value={this.state.date}
-            onChange={this.handleOnChange}
+            onChange={(event) => this.handleOnChange(event)}
             >
           </input>
 

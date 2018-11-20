@@ -2,23 +2,24 @@ import React, { Component } from 'react'
 import SearchInput from './SearchInput'
 import { connect } from 'react-redux'
 import { fetchPhoto } from '../actions/picActions'
+import App from '../App.js'
+
 
 class PhotosContainer extends Component {
   render(){
     return (
       <div>
-      <SearchInput photo={this.state.photo}  fetchPhoto={this.state.fetchPhoto()}/>
+      <SearchInput fetchPhoto={this.props.fetchPhoto()}/>
       </div>
     )
   }
 }
 
+function mapDispatchToProps(dispatch){
+  return { fetchPhoto: () => dispatch(fetchPhoto()) }
+}
 
-const mapStateToProps = state => ({
-   photo: state.pictures
-})
-
-const mapDispatchToProps = dispatch => ({
-  fetchPhoto: date => dispatch(fetchPhoto(date))
-})
+function mapStateToProps(state){
+  return {photos: state.pictures}
+}
 export default connect(mapStateToProps, mapDispatchToProps)(PhotosContainer)
