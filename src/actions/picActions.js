@@ -1,5 +1,5 @@
 export function fetchPhoto(date) {
-  const url = `https://api.nasa.gov/planetary/apod?date=${date}&hd=false&api_key=[insert key]`
+  const url = `https://api.nasa.gov/planetary/apod?date=${date}&hd=false&api_key=s773cGTT3VGPiJQZ9Hx0I1l4Nv07JiihqIYQohKf`
 
   return (dispatch) => {
     dispatch({type: 'FETCH_PHOTO'});
