@@ -25,10 +25,12 @@ class SearchInput extends Component {
   }
 
 
+// TODO need to update date so that they can't pick future dates 
   render(){
     return (
       <div>
         <form onSubmit={(event) => this.handleOnSubmit(event)}>
+
           <input
             type="date"
             value={this.state.date}
