@@ -2,14 +2,13 @@ import React, { Component } from 'react'
 import SearchInput from './SearchInput'
 import { connect } from 'react-redux'
 import { fetchPhoto } from '../actions/picActions'
-import App from '../App.js'
 
 
 class PhotosContainer extends Component {
   render(){
     return (
       <div>
-      <SearchInput fetchPhoto={this.props.fetchPhoto()}/>
+        <SearchInput fetchPhoto={this.props.fetchPhoto}/>
       </div>
     )
   }
