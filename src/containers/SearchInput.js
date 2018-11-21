@@ -18,7 +18,10 @@ class SearchInput extends Component {
 
   handleOnSubmit = (event) => {
     event.preventDefault()
-     this.props.fetchPhoto()
+     this.props.fetchPhoto();
+     this.setState({
+       date: ''
+     })
   }
 
 
