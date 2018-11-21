@@ -3,6 +3,10 @@ import Info from './Info'
 import { Button } from 'reactstrap';
 
 class Photo extends Component {
+// how to render info upon click
+  handleOnClick = () =>{
+    return <Info key={1} explanation={this.props.explanation}/>
+  }
 
   mediaType = (props) =>{
     if(props.mediaType === "video"){
@@ -16,11 +20,13 @@ class Photo extends Component {
     }
   }
 
+// TODO not sure how to have button / page render only if a photo is available
   render(){
     return (
       <div>
          {this.props.title}
          {this.mediaType(this.props)}
+         <Button outline color="primary" onClick={this.handleOnClick}>primary</Button>
       </div>
     )
   }
