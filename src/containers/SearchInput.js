@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
+import { Navbar, Nav, NavItem, NavDropdown, MenuItem, FormGroup, FormControl, Button } from 'react-bootstrap'
 
 class SearchInput extends Component {
+
   constructor(props) {
    super(props);
    this.state = {date: ''};
@@ -8,6 +10,8 @@ class SearchInput extends Component {
   // state ={
   //   date: ''
   // }
+
+
 
   handleOnChange = (event) => {
     this.setState({
@@ -25,25 +29,42 @@ class SearchInput extends Component {
   }
 
 
-// TODO need to update date so that they can't pick future dates 
+
+
+// TODO need to update date so that they can't pick future dates
   render(){
     return (
-      <div>
-        <form onSubmit={(event) => this.handleOnSubmit(event)}>
+      <div className='header'>
+        <Navbar>
+          <Navbar.Header>
+            <Navbar.Brand>
+              <a href="/"><img src="https://api.nasa.gov/images/logo.png" alt="NASA logo" width="50" height="50"/>Image of the Day</a>
+            </Navbar.Brand>
+          </Navbar.Header>
+              <FormGroup >
+                <FormControl type="date"  max="2018-11-21" value={this.state.date} onChange={(event) => this.handleOnChange(event)}/>
+              </FormGroup>{' '}
+              <Button type="submit" onClick={(event) => this.handleOnSubmit(event)}>Search</Button>
+        </Navbar >
 
-          <input
-            type="date"
-            value={this.state.date}
-            onChange={(event) => this.handleOnChange(event)}
-            >
-          </input>
 
-          <input type="submit" value="search">
-          </input>
-        </form>
       </div>
     )
   }
 }
 
 export default SearchInput
+
+// old form replaced with bootstrap
+
+// <form onSubmit={(event) => this.handleOnSubmit(event)}>
+//   <input
+//     type="date"
+//     value={this.state.date}
+//     onChange={(event) => this.handleOnChange(event)}
+//     >
+//   </input>
+//   <input type="submit" value="search">
+//   </input>
+// </form>
+//
