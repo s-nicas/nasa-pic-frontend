@@ -15,7 +15,7 @@ class PhotosContainer extends Component {
 }
 
 function mapDispatchToProps(dispatch){
-  return { fetchPhoto: () => dispatch(fetchPhoto()) }
+  return { fetchPhoto: date => dispatch(fetchPhoto(date)) }
 }
 
 function mapStateToProps(state){
