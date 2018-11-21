@@ -1,15 +1,20 @@
 import React, { Component } from 'react';
 import './App.css';
 import PhotosContainer from './containers/PhotosContainer'
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import NavBar from './containers/Navbar'
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <PhotosContainer/>
-        </header>
-      </div>
+      <Router>
+        <div className="App">
+          <Route path="/" exact component={PhotosContainer}/>
+          <header className="App-header">
+
+           </header>
+        </div>
+      </Router>
     );
   }
 }
