@@ -56,15 +56,3 @@ class SearchInput extends Component {
 export default SearchInput
 
 // old form replaced with bootstrap
-
-// <form onSubmit={(event) => this.handleOnSubmit(event)}>
-//   <input
-//     type="date"
-//     value={this.state.date}
-//     onChange={(event) => this.handleOnChange(event)}
-//     >
-//   </input>
-//   <input type="submit" value="search">
-//   </input>
-// </form>
-//

@@ -11,7 +11,7 @@ class Photo extends Component {
   mediaType = (props) =>{
     if(props.mediaType === "video"){
       return (
-        <iframe width="560" height="400"
+        <iframe className="center"width="600" height="400"
           src={props.url} title={this.props.title}>
         </iframe>
       )
