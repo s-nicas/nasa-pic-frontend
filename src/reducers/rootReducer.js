@@ -1,5 +1,5 @@
 export default function rootsReducer(state = {
-    isFetchingPhoto: true,
+    isFetchingPhoto: false,
     pictures: []
   }, action) {
     switch (action.type) {
