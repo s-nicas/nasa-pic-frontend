@@ -1,13 +1,18 @@
 import React, {Component} from 'react'
+import { Button, Modal } from 'react-bootstrap';
 
+class PictureInfo extends Component {
 
-class Info extends Component {
   render() {
-    return(
+
+    return (
       <div>
-        {this.props.explanation}
+
+        {this.props.photo.explanation}
+        copyright: {this.props.photo.copyright}
       </div>
-    )
+    );
   }
 }
-export default Info
+
+export default PictureInfo
