@@ -1,14 +1,37 @@
 import React, {Component} from 'react'
+import { fetchTodaysPhoto } from '../actions/picActions'
+import PhotoInfo from './PhotoInfo'
+import { connect } from 'react-redux'
 
 
-const Home = () => {
+class Home extends Component {
 
-    return (
-      <div className="center">
-        <img src="https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/atmosphere_geo5_2018235_eq.jpg" alt='Just Another Day in Aerosol Earth' />
-      </div>
-    )
 
+  componentDidMount(){
+    this.props.fetchTodaysPhoto();
+  }
+
+    render(){
+      return(
+
+        <PhotoInfo photoInfo={this.props.photo} />
+      )
+    }
 
 }
-export default Home
+
+function mapDispatchToProps(dispatch){
+  return { fetchTodaysPhoto: () => dispatch(fetchTodaysPhoto()) }
+}
+
+function mapStateToProps(state){
+  return {photo: state.pictures}
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Home)
+
+//  yyyymmdd =() => {
+//    function twoDigit(n) { return (n < 10 ? '0' : '') + n; }
+//
+//    var now = new Date();
+//    return `${now.getFullYear()}- ${twoDigit(now.getMonth() + 1)}-${twoDigit(now.getDate())}`;
+// }
