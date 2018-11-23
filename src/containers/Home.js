@@ -6,18 +6,14 @@ import { connect } from 'react-redux'
 
 class Home extends Component {
 
-
   componentDidMount(){
     this.props.fetchTodaysPhoto();
   }
-
     render(){
       return(
-
         <PhotoInfo photoInfo={this.props.photo} />
       )
     }
-
 }
 
 function mapDispatchToProps(dispatch){
