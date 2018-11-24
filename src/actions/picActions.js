@@ -21,3 +21,16 @@ export function fetchTodaysPhoto() {
   }
 
 }
+
+
+export function fetchMarsPhotos(){
+  return (dispatch) => {
+    dispatch({type: FETCH_MARS_PHOTOS});
+    fetch(`http://localhost:3001`,{
+      method: 'GET'
+    })
+    .then(response => response.json())
+    .then(data => dispatch({type: 'ADD_MARS_PHOTO_TO_STATE', data: data}))
+
+  }
+}
