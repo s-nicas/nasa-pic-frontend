@@ -26,7 +26,7 @@ class SearchInput extends Component {
 // TODO need to update date so that they can't pick future dates
   render(){
     return (
-      <div >
+      <div>
         <Col md="6">
           <form className="form-inline mt-4 mb-4">
             <Fa icon="search" />
