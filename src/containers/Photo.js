@@ -19,7 +19,7 @@ class Photo extends Component {
   render(){
     return (
       <div >
-         {this.props.title}
+         <h3>{this.props.title}</h3>
          {this.mediaType(this.props)}
       </div>
     )

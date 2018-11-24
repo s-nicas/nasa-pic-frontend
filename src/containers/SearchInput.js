@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { Navbar, Nav, NavItem, NavDropdown, MenuItem, FormGroup, FormControl, Button } from 'react-bootstrap'
+import { Button } from 'react-bootstrap'
 import { fetchPhoto } from '../actions/picActions'
 import { connect } from 'react-redux'
 import { Col, Fa } from "mdbreact";
@@ -28,14 +28,14 @@ class SearchInput extends Component {
 
   handleRedirect = () => {
     if (this.state.redirect){
-      return <Redirect to="/photo" />
+      return <Redirect to="/photo"/>
     }
   }
 
 // TODO need to update date so that they can't pick future dates
   render(){
     return (
-      <div>
+      <div id="SearchBar">
         <Col md="6">
           <form className="form-inline mt-4 mb-4">
             <Fa icon="search" />
@@ -63,3 +63,6 @@ function mapStateToProps(state){
   return {photo: state.pictures}
 }
 export default connect(mapStateToProps, mapDispatchToProps)(SearchInput)
+
+
+// notes for later return <Redirect to={`/photos/${prevState.date}`}  />
