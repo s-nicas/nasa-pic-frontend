@@ -3,9 +3,11 @@ import { Navbar, Nav, NavItem, NavDropdown, MenuItem, FormGroup, FormControl, Bu
 import { fetchPhoto } from '../actions/picActions'
 import { connect } from 'react-redux'
 import { Col, Fa } from "mdbreact";
+import { Redirect } from "react-router-dom";
 
 class SearchInput extends Component {
-   state = {date: ''};
+   state = {date: '',
+   redirect: false };
 
 
   handleOnChange = (event) => {
@@ -19,8 +21,15 @@ class SearchInput extends Component {
     event.preventDefault()
      this.props.fetchPhoto(this.state.date);
      this.setState({
-       date: ''
+       date: '',
+       redirect: true
      })
+  }
+
+  handleRedirect = () => {
+    if (this.state.redirect){
+      return <Redirect to="/photo" />
+    }
   }
 
 // TODO need to update date so that they can't pick future dates
@@ -36,6 +45,7 @@ class SearchInput extends Component {
               value={this.state.date}
               onChange={(event) => this.handleOnChange(event)}
             />
+            {this.handleRedirect()}
             <Button type="submit" onClick={(event) => this.handleOnSubmit(event)}>Search</Button>
           </form>
         </Col>
