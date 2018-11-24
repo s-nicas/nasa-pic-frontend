@@ -1,19 +1,27 @@
 import React, { Component } from 'react';
 import './App.css';
 import PhotosContainer from './containers/PhotosContainer'
-import { BrowserRouter }  from 'react-router-dom'
-import Route from 'react-router-dom/Route'
+import { BrowserRouter as Router, Route, Link } from "react-router-dom"
+import Home from './containers/Home'
+import NavBar from './containers/NavBar'
+
+import SearchInput from './containers/SearchInput'
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <PhotosContainer/>
-        </header>
+    <Router>
+      <div>
+        <NavBar/>
+        <Route exact path="/" component={Home}/>
+        <Route exact path="/search" component={SearchInput}/>
+        <Route exact path="/photo" component={PhotosContainer}/>
       </div>
+    </Router>
     );
   }
 }
 
 export default App;
+
+  // <Route exact path="/" component={SearchInput}/>
