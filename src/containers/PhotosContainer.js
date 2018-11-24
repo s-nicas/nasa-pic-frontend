@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { fetchPhoto } from '../actions/picActions'
 import PhotoInfo from './PhotoInfo'
 import PictureInfo from './Info'
+import InformationPopOver from './InformationPopOver'
 
 class PhotosContainer extends Component {
 
@@ -10,7 +11,7 @@ class PhotosContainer extends Component {
     return (
       <div>
         {Object.keys(this.props.photo).length !== 0 ? <PhotoInfo photoInfo={this.props.photo} /> : true }
-        {Object.keys(this.props.photo).length !== 0 ? <PictureInfo photo={this.props.photo}/> : false}
+        {Object.keys(this.props.photo).length !== 0 ? <InformationPopOver photo={this.props.photo}/> : false}
       </div>
     )
   }
