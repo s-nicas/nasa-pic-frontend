@@ -12,7 +12,6 @@ const PhotoInfo = props => {
       </div>
     )
   }
-  return (<div></div>)
 
 }
 
