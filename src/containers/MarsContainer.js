@@ -5,14 +5,18 @@ import MarsPictures from './MarsPictures'
 
 class MarsContainer extends Component {
 
+  componentDidMount(){
+    this.props.fetchMarsPhotos();
+  }
   render(){
     return(
       <div>
-        <MarsPictures pictures={this.props.photos}/>
+        {Object.keys(this.props.photos).length !== 0 ?  <MarsPictures pictures={this.props.photos} /> : true}
       </div>
     )
   }
 }
+
 
   function mapDispatchToProps(dispatch){
     return { fetchMarsPhotos: () => dispatch(fetchMarsPhotos()) }
