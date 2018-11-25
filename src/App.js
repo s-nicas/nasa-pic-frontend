@@ -4,6 +4,7 @@ import PhotosContainer from './containers/PhotosContainer'
 import { BrowserRouter as Router, Route} from "react-router-dom"
 import Home from './containers/Home'
 import NavBar from './containers/NavBar'
+import MarsContainer from './containers/MarsContainer'
 
 import SearchInput from './containers/SearchInput'
 
