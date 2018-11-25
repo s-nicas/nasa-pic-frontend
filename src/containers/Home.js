@@ -37,9 +37,7 @@ class Home extends Component {
       <div>
         <PhotoInfo photoInfo={this.props.photo} />
         {this.handleRedirect()}
-        <Button onClick={this.setRedirect}>Explore NASA photos</Button>
         <InformationPopOver photo={this.props.photo}/>
-
       </div>
       )
     }
