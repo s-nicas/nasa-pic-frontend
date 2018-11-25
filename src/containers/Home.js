@@ -2,7 +2,6 @@ import React, {Component} from 'react'
 import { fetchTodaysPhoto } from '../actions/picActions'
 import PhotoInfo from './PhotoInfo'
 import { connect } from 'react-redux'
-import {Button } from 'react-bootstrap'
 import { Redirect } from "react-router-dom";
 import InformationPopOver from './InformationPopOver'
 
