@@ -25,7 +25,7 @@ export function fetchTodaysPhoto() {
 
 export function fetchMarsPhotos(){
   return (dispatch) => {
-    dispatch({type: FETCH_MARS_PHOTOS});
+    dispatch({type: 'FETCH_MARS_PHOTOS'});
     fetch(`http://localhost:3001/mars`,{
       method: 'GET'
     })
