@@ -1,13 +1,15 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchMarsPhotos } from '../actions/picActions'
+import MarsPictures from './MarsPictures'
 
 class MarsContainer extends Component {
 
   render(){
     return(
-
-
+      <div>
+        <MarsPictures pictures={this.props.photos}/>
+      </div>
     )
   }
 }
