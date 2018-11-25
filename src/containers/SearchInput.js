@@ -7,7 +7,8 @@ import { Redirect } from "react-router-dom";
 
 class SearchInput extends Component {
    state = {date: '',
-   redirect: false };
+   redirect: false
+  };
 
 
   handleOnChange = (event) => {
@@ -32,7 +33,14 @@ class SearchInput extends Component {
     }
   }
 
-// TODO need to update date so that they can't pick future dates
+
+   todaysDate = () => {
+     function twoDigit(n) { return (n < 10 ? '0' : '') + n; }
+
+     var now = new Date();
+      return `${now.getFullYear()}-${twoDigit(now.getMonth() + 1)}-${twoDigit(now.getDate())}`;
+  }
+
   render(){
     return (
       <div id="SearchBar">
@@ -44,6 +52,7 @@ class SearchInput extends Component {
               type="date"
               value={this.state.date}
               onChange={(event) => this.handleOnChange(event)}
+              max={this.todaysDate()}
             />
             {this.handleRedirect()}
             <Button type="submit" onClick={(event) => this.handleOnSubmit(event)}>Search</Button>

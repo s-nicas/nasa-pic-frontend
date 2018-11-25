@@ -51,10 +51,3 @@ function mapStateToProps(state){
   return {photo: state.pictures}
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Home)
-
-//  yyyymmdd =() => {
-//    function twoDigit(n) { return (n < 10 ? '0' : '') + n; }
-//
-//    var now = new Date();
-//    return `${now.getFullYear()}- ${twoDigit(now.getMonth() + 1)}-${twoDigit(now.getDate())}`;
-// }
