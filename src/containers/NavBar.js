@@ -9,6 +9,11 @@ const NavBar = () => {
           <a href="/"><img src="https://api.nasa.gov/images/logo.png" alt="NASA logo" width="50" height="50"/>Photo Exploration</a>
         </Navbar.Brand>
       </Navbar.Header>
+      <Nav>
+        <NavItem eventKey={2} href="/search">
+          Daily Photo Archieve 
+        </NavItem>
+      </Nav>
       <Nav pullRight>
         <NavItem eventKey={1} href="/mars">
           Explore Mars
