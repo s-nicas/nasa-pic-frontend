@@ -11,16 +11,7 @@ import SearchInput from './containers/SearchInput'
 class App extends Component {
   render() {
     return (
-<<<<<<< HEAD
-      <Router>
-        <div className="App">
-          <Route path="/" exact component={PhotosContainer}/>
-          <header className="App-header">
-
-           </header>
-        </div>
-      </Router>
-=======
+      
     <Router>
       <div className="App">
         <NavBar/>
@@ -30,7 +21,6 @@ class App extends Component {
         <Route exact path="/mars" component={MarsContainer} />
       </div>
     </Router>
->>>>>>> lastWed
     );
   }
 }

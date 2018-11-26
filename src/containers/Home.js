@@ -3,7 +3,7 @@ import { fetchTodaysPhoto } from '../actions/picActions'
 import PhotoInfo from './PhotoInfo'
 import { connect } from 'react-redux'
 import { Redirect } from "react-router-dom";
-import InformationPopOver from './InformationPopOver'
+import InformationPopOver from '../components/InformationPopOver'
 
 
 class Home extends Component {
