@@ -50,11 +50,11 @@ class SearchInput extends Component {
               className="form-control form-control-sm ml-3 w-75"
               type="date"
               value={this.state.date}
-              onChange={(event) => this.handleOnChange(event)}
+              onChange={this.handleOnChange}
               max={this.todaysDate()}
             />
             {this.handleRedirect()}
-            <Button type="submit" onClick={(event) => this.handleOnSubmit(event)}>Search</Button>
+            <Button type="submit" onClick={this.handleOnSubmit}>Search</Button>
           </form>
         </Col>
       </div>
@@ -67,7 +67,4 @@ function mapDispatchToProps(dispatch){
   return { fetchPhoto: date => dispatch(fetchPhoto(date)) }
 }
 
-function mapStateToProps(state){
-  return {photo: state.pictures}
-}
-export default connect(mapStateToProps, mapDispatchToProps)(SearchInput)
+export default connect(null, mapDispatchToProps)(SearchInput)
