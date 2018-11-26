@@ -63,8 +63,5 @@ class SearchInput extends Component {
 }
 
 
-function mapDispatchToProps(dispatch){
-  return { fetchPhoto: date => dispatch(fetchPhoto(date)) }
-}
 
-export default connect(null, mapDispatchToProps)(SearchInput)
+export default connect(null, {fetchPhoto})(SearchInput)
