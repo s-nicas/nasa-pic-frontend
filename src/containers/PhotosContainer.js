@@ -1,15 +1,16 @@
 import React, { Component } from 'react'
-import SearchInput from './SearchInput'
 import { connect } from 'react-redux'
 import { fetchPhoto } from '../actions/picActions'
 import PhotoInfo from './PhotoInfo'
+import InformationPopOver from './InformationPopOver'
 
 class PhotosContainer extends Component {
+
   render(){
     return (
       <div>
-        <SearchInput fetchPhoto={this.props.fetchPhoto}/>
-        <PhotoInfo photoInfo={this.props.photo} />
+        {Object.keys(this.props.photo).length !== 0 ? <PhotoInfo photoInfo={this.props.photo} /> : true }
+        {Object.keys(this.props.photo).length !== 0 ? <InformationPopOver photo={this.props.photo}/> : false}
       </div>
     )
   }

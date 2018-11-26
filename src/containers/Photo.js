@@ -1,32 +1,26 @@
 import React, {Component} from 'react'
-import Info from './Info'
-import { Button } from 'reactstrap';
 
 class Photo extends Component {
 // how to render info upon click
-  handleOnClick = () =>{
-    return <Info key={1} explanation={this.props.explanation}/>
-  }
 
   mediaType = (props) =>{
     if(props.mediaType === "video"){
       return (
-        <iframe className="center"width="600" height="400"
+        <iframe className="Home-Pic" width="540" height="500"
           src={props.url} title={this.props.title}>
         </iframe>
       )
     } else {
-    return (<img className="center" src={this.props.url} alt={this.props.title} />)
+    return (<img className="Home-Pic" src={this.props.url} alt={this.props.title} width="auto"/>)
     }
   }
 
 // TODO not sure how to have button / page render only if a photo is available
   render(){
     return (
-      <div>
-         {this.props.title}
+      <div >
+         <h3>{this.props.title}</h3>
          {this.mediaType(this.props)}
-         <Button outline color="primary" onClick={this.handleOnClick}>primary</Button>
       </div>
     )
   }
