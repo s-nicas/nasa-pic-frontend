@@ -10,9 +10,6 @@ class SearchInput extends Component {
    redirect: false
   };
 
-
-
-
   handleOnChange = (event) => {
     this.setState({
       date: event.target.value
@@ -43,27 +40,6 @@ class SearchInput extends Component {
       return `${now.getFullYear()}-${twoDigit(now.getMonth() + 1)}-${twoDigit(now.getDate())}`;
   }
 
-<<<<<<< HEAD
-
-
-// TODO need to update date so that they can't pick future dates
-  render(){
-    return (
-      <div className='header'>
-        <Navbar>
-          <Navbar.Header>
-            <Navbar.Brand>
-              <a href="/"><img src="https://api.nasa.gov/images/logo.png" alt="NASA logo" width="50" height="50"/>Image of the Day</a>
-            </Navbar.Brand>
-          </Navbar.Header>
-              <FormGroup >
-                <FormControl type="date"  max="2018-11-21" value={this.state.date} onChange={(event) => this.handleOnChange(event)}/>
-              </FormGroup>{' '}
-              <Button type="submit" onClick={(event) => this.handleOnSubmit(event)}>Search</Button>
-        </Navbar >
-
-
-=======
   render(){
     return (
       <div id="SearchBar">
@@ -81,17 +57,11 @@ class SearchInput extends Component {
             <Button type="submit" onClick={(event) => this.handleOnSubmit(event)}>Search</Button>
           </form>
         </Col>
->>>>>>> lastWed
       </div>
     )
   }
 }
 
-<<<<<<< HEAD
-export default SearchInput
-
-// old form replaced with bootstrap
-=======
 
 function mapDispatchToProps(dispatch){
   return { fetchPhoto: date => dispatch(fetchPhoto(date)) }
@@ -101,7 +71,3 @@ function mapStateToProps(state){
   return {photo: state.pictures}
 }
 export default connect(mapStateToProps, mapDispatchToProps)(SearchInput)
-
-
-// notes for later return <Redirect to={`/photos/${prevState.date}`}  />
->>>>>>> lastWed
