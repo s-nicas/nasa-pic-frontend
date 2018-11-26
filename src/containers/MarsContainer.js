@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchMarsPhotos } from '../actions/picActions'
-import MarsPictures from './MarsPictures'
+import MarsPictures from '../components/MarsPictures'
 
 class MarsContainer extends Component {
 
