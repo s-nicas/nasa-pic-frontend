@@ -11,7 +11,7 @@ const NavBar = () => {
       </Navbar.Header>
       <Nav>
         <NavItem eventKey={2} href="/search">
-          Daily Photo Archieve 
+          Daily Photo Archive 
         </NavItem>
       </Nav>
       <Nav pullRight>
