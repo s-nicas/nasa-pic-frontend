@@ -32,7 +32,7 @@ class SearchInput extends Component {
 
   handleRedirect = () => {
     if (this.state.redirect){
-      return <Redirect to={`/photo/${this.state.date}`}/>
+      return <Redirect to={`/photos/${this.state.date}`}/>
 
     }
   }
