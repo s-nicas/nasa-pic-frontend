@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 
-class Photo extends Component {
-// how to render info upon click
+export default class Photo extends Component {
 
   mediaType = (props) =>{
     if(props.mediaType === "video"){
@@ -11,11 +10,10 @@ class Photo extends Component {
         </iframe>
       )
     } else {
-    return (<img className="Home-Pic" src={this.props.url} alt={this.props.title} width="auto"/>)
+    return (<img className="Home-Pic" src={this.props.url} alt={this.props.title} width="auto" height="550"/>)
     }
   }
 
-// TODO not sure how to have button / page render only if a photo is available
   render(){
     return (
       <div >
@@ -25,4 +23,3 @@ class Photo extends Component {
     )
   }
 }
-export default Photo
