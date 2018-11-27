@@ -16,8 +16,8 @@ export default class InformationPopOver extends React.Component {
   render() {
     return (
       <div>
-        <Button id="Popover1" onClick={this.toggle}>
-          Read About Image 
+        <Button className="buttonInfo" id="Popover1" onClick={this.toggle}>
+          Read About Image
         </Button>
         <Popover placement="bottom" isOpen={this.state.popoverOpen} target="Popover1" toggle={this.toggle}>
           <PopoverHeader>{this.props.photo.title}</PopoverHeader>
