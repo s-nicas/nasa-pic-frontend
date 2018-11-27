@@ -20,6 +20,24 @@
   justify-content: space-around;
 }
 
+.buttonInfo{
+  margin-left: 100px;
+  display: flex;
+  position:absolute
+}
+
+.buttonComment {
+   margin-right: 400px; */
+  display: flex;
+  margin-top: 0px;
+  position:relative;
+    background-color: #282c34;
+
+}
+
+#button{
+  color: black
+}
 
 /* .App {
   text-align: center;
