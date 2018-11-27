@@ -5,15 +5,19 @@
     padding: 5px;
 } */
 
+
 .App{
   text-align: center;
   color: white;
 }
 
-#SearchBar{
+.SearchBar{
 
-  margin-left: auto;
-  margin-right: auto;
+  width: auto;
+  height: auto;
+  margin: 200px;
+  align-items: center;
+  justify-content: space-around;
 }
 
 

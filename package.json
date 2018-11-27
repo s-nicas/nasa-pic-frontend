@@ -8,6 +8,7 @@
     "react": "^16.6.3",
     "react-bootstrap": "^0.32.4",
     "react-dom": "^16.6.3",
+    "react-image-gallery": "^0.8.12",
     "react-images": "^0.5.19",
     "react-redux": "^5.1.1",
     "react-router-dom": "^4.3.1",

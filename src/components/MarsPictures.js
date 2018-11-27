@@ -7,8 +7,8 @@ const MarsPictures = (props) =>{
 
   return (
     <div>
-      {pictures.map((photo)=>{
-      return  <MarsPicture key={photo.id} image={photo.img_src} />
+      {pictures.map((photo) => {
+        return  <MarsPicture key={photo.id} image={photo.img_src} />
         })
       }
     </div>

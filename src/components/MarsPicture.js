@@ -5,7 +5,7 @@ class MarsPicture extends Component {
   render(){
     return(
     <div>
-      <Grid>
+      <Grid >
         <Row>
           <Col xs={6} md={3}>
            <Image href={this.props.image} src={this.props.image} thumbnail />
