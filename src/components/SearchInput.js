@@ -19,16 +19,21 @@ class SearchInput extends Component {
 
   handleOnSubmit = (event) => {
     event.preventDefault()
-     this.props.fetchPhoto(this.state.date);
-     this.setState({
-       date: '',
-       redirect: true
-     })
+    if (!this.state.date) {
+      alert('Please select a valid date')
+    } else {
+      this.props.fetchPhoto(this.state.date);
+      this.setState({
+        redirect: true
+      })
+    }
+
   }
 
   handleRedirect = () => {
     if (this.state.redirect){
-      return <Redirect to="/photo"/>
+      return <Redirect to={`/photo/${this.state.date}`}/>
+
     }
   }
 
