@@ -4,6 +4,7 @@ import PhotoInfo from './PhotoInfo'
 import { connect } from 'react-redux'
 import { Redirect } from "react-router-dom";
 import InformationPopOver from '../components/InformationPopOver'
+import CommentsInput from '../components/commentsInput'
 
 
 class Home extends Component {
@@ -27,6 +28,7 @@ class Home extends Component {
       <div >
         <PhotoInfo photoInfo={this.props.photo} />
         <InformationPopOver photo={this.props.photo}/>
+        <CommentsInput />
       </div>
       )
     }
