@@ -47,12 +47,12 @@ class SearchInput extends Component {
 
   render(){
     return (
-      <div id="SearchBar">
-        <Col md="6">
-          <form className="form-inline mt-4 mb-4">
-            <Fa icon="search" />
+
+      <div className="SearchBar">
+        <h3>Search NASA's Archive of Daily Photos</h3>
+
+          <form className="text-center">
             <input
-              className="form-control form-control-sm ml-3 w-75"
               type="date"
               value={this.state.date}
               onChange={this.handleOnChange}
@@ -61,7 +61,7 @@ class SearchInput extends Component {
             {this.handleRedirect()}
             <Button type="submit" onClick={this.handleOnSubmit}>Search</Button>
           </form>
-        </Col>
+
       </div>
     )
   }
