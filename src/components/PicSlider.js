@@ -17,12 +17,16 @@ class PicSlider extends Component {
   }
 
   goToPrevSlide = () => {
-
+    this.setState(prevState => ({
+      currentIndex: prevState.currentIndex - 1
+    }));
   }
 
   goToNextSlide = () => {
-
-}
+    this.setState(prevState => ({
+      currentIndex: prevState.currentIndex + 1
+    }));
+  }
 
   render() {
     return (
