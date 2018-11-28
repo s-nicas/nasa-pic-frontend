@@ -6,7 +6,9 @@ import { Button } from 'reactstrap';
 export default class CommentsInput extends Component {
 
       state = {
-        visible : false
+        visible : false,
+        title: '',
+        content: ''
       }
 
     openModal() {
@@ -19,6 +21,10 @@ export default class CommentsInput extends Component {
         this.setState({
             visible : false
         });
+    }
+
+    handleComment() {
+
     }
 
     render() {
@@ -34,8 +40,18 @@ export default class CommentsInput extends Component {
                 >
                     <div>
                         <h1 >testjfjfjfjf</h1>
-                        
-                        <p >Some Contents</p>
+                          <form>
+                            <label onSubmit={this.handleComment}>
+                              Title:
+                              <input type="text" name="title" onChange={this.handleTitle}/>
+                            </label>
+                            <label>
+                              Content:
+                              <input type="text_area" name="content" onChange={this.handleContent}/>
+                            </label>
+                            <input type="submit" value="Submit" />
+                          </form>
+                        <p>Some Contents</p>
                         <a href="javascript:void(0);" onClick={() => this.closeModal()}>Close</a>
                     </div>
                 </Modal>
