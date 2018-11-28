@@ -1,7 +1,11 @@
 export default function rootsReducer(state = {
     isFetchingPhoto: false,
     pictures: [],
-    userRequestInProgress: false
+    commentRequestInProgress: false
+    // comments: [],
+    // userRequestInProgress: false,
+    // currentUser: null,
+    // loggedIn: false
     // ,
     // picture: {}
   }, action) {
@@ -16,6 +20,10 @@ export default function rootsReducer(state = {
         return {isFetchingPhoto: false, pictures: action.data}
         case 'BEGIN_USER_REQUEST':
          return {...state, userRequestInProgress: true}
+        case 'LOGIN':
+          return { loggedIn: true, currentUser: action.payload.user }
+        case 'COMMENT_REQUEST':
+            return {...state, commentRequestInProgress: true}
        default:
         return state;
     }
