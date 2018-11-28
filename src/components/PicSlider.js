@@ -7,12 +7,13 @@ import {fetchAllPhotos} from '../actions/picActions'
 
 class PicSlider extends Component {
   state = {
-    images:[]
+    images:this.props.photos,
+    currentIndex: 0
   }
 
   componentDidMount(){
     this.props.fetchAllPhotos();
-    debugger
+    // should i call the fetch request here? Or how should i update state?
   }
 
   goToPrevSlide = () => {
@@ -35,4 +36,8 @@ class PicSlider extends Component {
   }
 }
 
-export default connect(null, {fetchAllPhotos})(PicSlider)
+function mapStateToProps(state){
+  return {photos: state.pictures}
+}
+
+export default connect(mapStateToProps, {fetchAllPhotos})(PicSlider)
