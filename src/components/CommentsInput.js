@@ -80,10 +80,10 @@ import CommentsContainer from '../containers/CommentsContainer'
                             <input type="submit" value="Submit" />
                           </form>
                         <p>Some Contents</p>
-                        <a  onClick={this.closeModal}>Close</a>
+                        <button onClick={this.closeModal}>Close</button>
 
                         {<CommentsContainer/>}
-                        
+
                     </div>
                 </Modal>
             </section>
