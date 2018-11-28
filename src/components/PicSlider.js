@@ -7,13 +7,28 @@ import {fetchAllPhotos} from '../actions/picActions'
 
 class PicSlider extends Component {
   state = {
-    images:this.props.photos,
+    images:[],
     currentIndex: 0
   }
 
   componentDidMount(){
-    this.props.fetchAllPhotos();
+    // this.props.fetchAllPhotos();
+    // dispatch({type: 'FETCH_ALL_PHOTOS'});
+    fetch(`http://localhost:3001/pictures`,{
+      method: 'GET'
+    })
+    .then(response => response.json())
+    .then(data => this.setState({
+      images: data
+    }))
+    // .then(data => dispatch({type: 'ADD_ALL_PHOTOS_TO_STATE', data: data }))
     // should i call the fetch request here? Or how should i update state?
+  }
+
+  addPhotos = () =>{
+    this.setState({
+      images: this.props.photos
+    })
   }
 
   goToPrevSlide = () => {
@@ -29,9 +44,14 @@ class PicSlider extends Component {
   }
 
   render() {
+
     return (
       <div className="slider">
-      <Slide />
+      {
+          this.state.images.map((image, i) => (
+            <Slide key={i} image={image} />
+          ))
+        }
 
       <LeftArrow goToPrevSlide={this.goToPrevSlide}/>
       <RightArrow goToNextSlide={this.goToNextSlide}/>
