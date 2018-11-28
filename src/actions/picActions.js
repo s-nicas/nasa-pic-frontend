@@ -39,18 +39,18 @@ export function fetchMarsPhotos(){
 export function signIn(username, password) {
 
     return (dispatch) => {
-        const body = JSON.stringify({username: username, password:password})
-      console.log(body)
+       const body = JSON.stringify({username: username, password:password})
 
-        // dispatch({ type: "BEGIN_USER_REQUEST" })
-
-        return fetch("/signin", {
+        dispatch({ type: "BEGIN_USER_REQUEST" })
+        return fetch(`http://localhost:3001/signin`, {
             method: 'POST',
-            body: body,
-            headers: { "Content-type": 'application/json' },
+            headers: {
+              'Accept': 'application/json',
+              body: body
+            }
         })
             .then(resp => resp.json())
-      
+
             .then(userInfo => {
                 if(userInfo.error){
                     window.alert(userInfo.error)
