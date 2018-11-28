@@ -2,7 +2,6 @@ import React, {Component} from 'react'
 import { fetchTodaysPhoto } from '../actions/picActions'
 import PhotoInfo from './PhotoInfo'
 import { connect } from 'react-redux'
-import { Redirect } from "react-router-dom";
 import InformationPopOver from '../components/InformationPopOver'
 import CommentsInput from '../components/CommentsInput'
 
@@ -42,4 +41,5 @@ function mapDispatchToProps(dispatch){
 function mapStateToProps(state){
   return {photo: state.pictures}
 }
+
 export default connect(mapStateToProps, mapDispatchToProps)(Home)
