@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import Slide from './slide'
-import LeftArrow from './left-arrow'
-import RightArrow from './right-arrow'
-import {fetchAllPhotos} from ''
+import Slide from './Slide'
+import LeftArrow from './LeftArrow'
+import RightArrow from './RightArrow'
+import { connect } from 'react-redux'
+import {fetchAllPhotos} from '../actions/picActions'
 
 class PicSlider extends Component {
   state = {
@@ -11,6 +12,7 @@ class PicSlider extends Component {
 
   componentDidMount(){
     this.props.fetchAllPhotos();
+    debugger
   }
 
   goToPrevSlide = () => {
@@ -33,4 +35,4 @@ class PicSlider extends Component {
   }
 }
 
-export default PicSlider
+export default connect(null, {fetchAllPhotos})(PicSlider)

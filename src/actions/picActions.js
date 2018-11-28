@@ -42,6 +42,6 @@ export function fetchAllPhotos(){
       method: 'GET'
     })
     .then(response => response.json())
-    .then(data => dispatch({type: 'ADD_ALL_PHOTOS_TO_STATE'}))
+    .then(data => dispatch({type: 'ADD_ALL_PHOTOS_TO_STATE', data: data }))
   }
 }
