@@ -2,7 +2,6 @@ import React, {Component} from 'react'
 import { Button } from 'react-bootstrap'
 import { fetchPhoto } from '../actions/picActions'
 import { connect } from 'react-redux'
-import { Col, Fa } from "mdbreact";
 import { Redirect } from "react-router-dom";
 
 class SearchInput extends Component {
