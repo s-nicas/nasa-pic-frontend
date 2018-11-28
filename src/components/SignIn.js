@@ -4,6 +4,7 @@ import { signIn } from '../actions/picActions'
 import { connect } from 'react-redux'
 // import { Button } from 'reactstrap';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import Register from './Register'
 
 
  class SignIn extends Component {
@@ -44,6 +45,14 @@ import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
       this.props.signIn(this.state.username, this.state.password)
     }
 
+  onClickRenderRegister = () => {
+    return (
+    <div>
+          <Register/>
+    </div>
+
+)  }
+
     render() {
         return (
             <section >
@@ -69,11 +78,11 @@ import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
                             </FormGroup>
                             <Button onClick={this.handleOnSubmit}>Submit</Button>
                           </Form>
+                          {<Register/>}
+                        <button id="closeButton" onClick={() => this.closeModal()}>Close</button>
 
-                        <p id="registerNow"><b> Not registed yet? Register now!</b></p>
-
-                        <a href="javascript:void(0);" onClick={() => this.closeModal()}>Close</a>
                     </div>
+
                 </Modal>
             </section>
         );
