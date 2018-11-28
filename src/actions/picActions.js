@@ -7,7 +7,6 @@ export function fetchPhoto(date) {
     .then(response => response.json())
     .then(data => dispatch({type: 'ADD_PHOTO_TO_STATE', data: data}))
   }
-
 }
 
 

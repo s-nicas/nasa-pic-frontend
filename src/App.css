@@ -21,6 +21,28 @@
 }
 
 
+/* Slider Styling */
+.slider {
+    height: 500px;
+    width: 100%;
+    padding: 70px;
+    display: inline-block;
+
+}
+
+.slider-wrapper {
+    height: 100%;
+    width: 100%;
+    overflow: scroll
+
+}
+
+.slide {
+    height: 100%;
+    width: 30%;
+    display: inline-block;
+}
+
 /* .App {
   text-align: center;
   background-color: #282c34;
