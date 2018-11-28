@@ -38,29 +38,44 @@ export function fetchMarsPhotos(){
 
 export function signIn(username, password) {
 
-    return (dispatch) => {
-       const body = JSON.stringify({username: username, password:password})
+  return (dispatch) => {
+     const body = JSON.stringify({username: username, password:password})
 
-        dispatch({ type: "BEGIN_USER_REQUEST" })
-        return fetch(`http://localhost:3001/signin`, {
+      dispatch({ type: "BEGIN_USER_REQUEST" })
+      return fetch(`http://localhost:3001/signin`, {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json',
+            body: body
+          }
+      })
+          .then(resp => resp.json())
+
+          .then(userInfo => {
+              if(userInfo.error){
+                  window.alert(userInfo.error)
+              }else {
+                  localStorage.setItem("jwtToken", userInfo.jwt)
+                  localStorage.setItem("currentUser", userInfo.user.username)
+                  dispatch({ type: "LOGIN", payload: userInfo })
+              }
+
+      })
+  }
+
+}
+
+
+export function signUp(username, password){
+    return (dispatch)=>{
+        const body = JSON.stringify({username: username, password: password})
+        dispatch({ type: "BEGIN_USER_REQUEST"})
+        return fetch('http://localhost:3001/signup', {
             method: 'POST',
-            headers: {
-              'Accept': 'application/json',
-              body: body
-            }
+            body: body,
+            headers: { "Content-type": 'application/json' },
         })
-            .then(resp => resp.json())
-
-            .then(userInfo => {
-                if(userInfo.error){
-                    window.alert(userInfo.error)
-                }else {
-                    localStorage.setItem("jwtToken", userInfo.jwt)
-                    localStorage.setItem("currentUser", userInfo.user.username)
-                    dispatch({ type: "LOGIN", payload: userInfo })
-                }
-
-            })
+        .then( resp => resp.json())
     }
 
 }
