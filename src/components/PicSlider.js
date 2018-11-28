@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
-import Slide from '../slide'
-import LeftArrow from '../left-arrow'
-import RightArrow from '../right-arrow'
+import Slide from './slide'
+import LeftArrow from './left-arrow'
+import RightArrow from './right-arrow'
+import {fetchAllPhotos} from ''
 
 class PicSlider extends Component {
   state = {
     images:[]
   }
 
-
+  componentDidMount(){
+    this.props.fetchAllPhotos();
+  }
 
   goToPrevSlide = () => {
 
