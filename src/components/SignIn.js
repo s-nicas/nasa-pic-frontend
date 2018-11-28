@@ -41,7 +41,7 @@ import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
     handleOnSubmit = (event) => {
       event.preventDefault()
-      signIn(this.state.username, this.state.password)
+      this.props.signIn(this.state.username, this.state.password)
     }
 
     render() {
