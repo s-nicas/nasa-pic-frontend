@@ -39,6 +39,14 @@
   color: black
 }
 
+#SignIn{
+  background-color: #007bff
+}
+
+#registerNow{
+  margin-top: 70px
+}
+
 /* .App {
   text-align: center;
   background-color: #282c34;

@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Route} from "react-router-dom"
 import Home from './components/Home'
 import NavBar from './components/NavBar'
 import MarsContainer from './containers/MarsContainer'
+import SignIn from './components/SignIn'
+
 
 import SearchInput from './components/SearchInput'
 
@@ -18,6 +20,7 @@ class App extends Component {
         <Route exact path="/search" component={SearchInput}/>
         <Route exact path="/photos/:date" component={PhotosContainer}/>
         <Route exact path="/mars" component={MarsContainer} />
+        <Route exact path="/signin" component={SignIn} />
       </div>
     </Router>
     );

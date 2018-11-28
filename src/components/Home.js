@@ -4,7 +4,7 @@ import PhotoInfo from './PhotoInfo'
 import { connect } from 'react-redux'
 import { Redirect } from "react-router-dom";
 import InformationPopOver from '../components/InformationPopOver'
-import CommentsInput from '../components/commentsInput'
+import CommentsInput from '../components/CommentsInput'
 
 
 class Home extends Component {

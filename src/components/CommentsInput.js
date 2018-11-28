@@ -34,6 +34,7 @@ export default class CommentsInput extends Component {
                 >
                     <div>
                         <h1 >testjfjfjfjf</h1>
+                        
                         <p >Some Contents</p>
                         <a href="javascript:void(0);" onClick={() => this.closeModal()}>Close</a>
                     </div>
