@@ -1,5 +1,6 @@
 import React from 'react'
 import { Navbar, Nav, NavItem} from 'react-bootstrap'
+import SignIn from './SignIn'
 
 const NavBar = () => {
   return (
@@ -11,12 +12,12 @@ const NavBar = () => {
       </Navbar.Header>
       <Nav>
         <NavItem eventKey={2} href="/search">
-          Daily Photo Archive 
+          Daily Photo Archive
         </NavItem>
       </Nav>
       <Nav pullRight>
-        <NavItem eventKey={1} href="/mars">
-          Explore Mars
+        <NavItem eventKey={1} >
+          <SignIn />
         </NavItem>
       </Nav>
     </Navbar >
