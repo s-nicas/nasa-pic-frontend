@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import Modal from 'react-awesome-modal';
 import { Button } from 'reactstrap';
 import { addComment } from '../actions/picActions'
+import { connect } from 'react-redux'
+import CommentsContainer from '../containers/CommentsContainer'
 
 
-export default class CommentsInput extends Component {
+ class CommentsInput extends Component {
 
       state = {
         visible : false,
@@ -12,21 +14,25 @@ export default class CommentsInput extends Component {
         content: ''
       }
 
-    openModal() {
-        this.setState({
-            visible : true
-        });
+    openModal = () => {
+      this.setState({
+        visible : true
+      });
     }
 
-    closeModal() {
-        this.setState({
-            visible : false
-        });
+    closeModal = () => {
+      this.setState({
+        visible : false
+      });
     }
 
-    handleOnCommentSubmit =(event)=> {
+    handleOnCommentSubmit = (event) => {
       event.preventDefault()
-    
+      this.props.addComment(this.state.title, this.state.content, this.props.photo.date)
+      this.setState({
+        title: '',
+        content: ''
+      })
     }
 
     handleTitleOnChange = (event) => {
@@ -43,24 +49,26 @@ export default class CommentsInput extends Component {
 
     render() {
         return (
-            <section id='button'>
+            <section id='commentsView'>
                 <Button className="buttonComment" onClick={() => this.openModal()}>Comment</Button>
-                <Modal
+                <Modal id="commentView"
                     visible={this.state.visible}
-                    width="400"
-                    height="300"
+                    width="600"
+                    height="600"
                     effect="fadeInUp"
-                    onClickAway={() => this.closeModal()}
+                    onClickAway={this.closeModal}
                 >
                     <div>
-                        <h1 >Comments</h1>
+                        <h1>Comments</h1>
+
                           <form onSubmit={this.handleOnCommentSubmit}>
                             <label >
                               Title:
                               <input type="text"
                                 name="title"
                                 value={this.state.title}
-                                onChange={this.handleTitleOnChange}/>
+                                onChange={this.handleTitleOnChange}
+                              />
                             </label>
                             <label>
                               Content:
@@ -72,10 +80,19 @@ export default class CommentsInput extends Component {
                             <input type="submit" value="Submit" />
                           </form>
                         <p>Some Contents</p>
-                        <a  onClick={() => this.closeModal()}>Close</a>
+                        <a  onClick={this.closeModal}>Close</a>
+
+                        {<CommentsContainer/>}
+                        
                     </div>
                 </Modal>
             </section>
         );
     }
 }
+
+function mapStateToProps(state){
+  return {photo: state.pictures}
+}
+
+export default connect(mapStateToProps, {addComment})(CommentsInput)
