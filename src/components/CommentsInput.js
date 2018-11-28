@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Modal from 'react-awesome-modal';
 import { Button } from 'reactstrap';
+import { addComment } from '../actions/picActions'
 
 
 export default class CommentsInput extends Component {
@@ -23,8 +24,21 @@ export default class CommentsInput extends Component {
         });
     }
 
-    handleComment() {
+    handleOnCommentSubmit =(event)=> {
+      event.preventDefault()
+    
+    }
 
+    handleTitleOnChange = (event) => {
+      this.setState({
+        title: event.target.value
+      })
+    }
+
+    handleContentOnChange = (event) => {
+      this.setState({
+        content: event.target.value
+      })
     }
 
     render() {
@@ -39,20 +53,26 @@ export default class CommentsInput extends Component {
                     onClickAway={() => this.closeModal()}
                 >
                     <div>
-                        <h1 >testjfjfjfjf</h1>
-                          <form>
-                            <label onSubmit={this.handleComment}>
+                        <h1 >Comments</h1>
+                          <form onSubmit={this.handleOnCommentSubmit}>
+                            <label >
                               Title:
-                              <input type="text" name="title" onChange={this.handleTitle}/>
+                              <input type="text"
+                                name="title"
+                                value={this.state.title}
+                                onChange={this.handleTitleOnChange}/>
                             </label>
                             <label>
                               Content:
-                              <input type="text_area" name="content" onChange={this.handleContent}/>
+                              <input type="text"
+                                name="content"
+                                value={this.state.content}
+                                onChange={this.handleContentOnChange}/>
                             </label>
                             <input type="submit" value="Submit" />
                           </form>
                         <p>Some Contents</p>
-                        <a href="javascript:void(0);" onClick={() => this.closeModal()}>Close</a>
+                        <a  onClick={() => this.closeModal()}>Close</a>
                     </div>
                 </Modal>
             </section>
