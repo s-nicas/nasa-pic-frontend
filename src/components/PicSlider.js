@@ -5,16 +5,27 @@ import RightArrow from '../right-arrow'
 
 export default class PicSlider extends Component {
   constructor(props) {
-    super(props);
+    super(props)
 
     this.state = {}
   }
 
+  goToPrevSlide = () => {
+
+  }
+
+  goToNextSlide = () => {
+
+}
+
   render() {
     return (
       <div className="slider">
+      <Slide />
 
-      </div>
+      <LeftArrow goToPrevSlide={this.goToPrevSlide}/>
+      <RightArrow goToNextSlide={this.goToNextSlide}/>
+    </div>
     );
   }
 }
