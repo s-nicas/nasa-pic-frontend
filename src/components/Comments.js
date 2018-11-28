@@ -1,18 +1,16 @@
 import React from 'react'
+import Comment from './Comment'
 
 const Comments = (props) =>{
-  const pictures = props.comments
-  console.log(props)
 
   return (
     <div>
-      {comments.map((comment) => {
-        return  <Comment key={comment.id} content={comment.content} />
+      {props.comments.map((comment) => {
+          return  <Comment key={comment.id} content={comment.content} />
         })
       }
     </div>
   )
-
 }
 
 export default Comments
