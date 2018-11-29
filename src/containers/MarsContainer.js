@@ -27,6 +27,3 @@ class MarsContainer extends Component {
   }
 
 export default connect(mapStateToProps, mapDispatchToProps)(MarsContainer)
-
-
-// add to app.js to return and import mars

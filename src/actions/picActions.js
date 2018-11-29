@@ -20,19 +20,6 @@ export function fetchTodaysPhoto() {
   }
 }
 
-
-export function fetchMarsPhotos(){
-  return (dispatch) => {
-    dispatch({type: 'FETCH_MARS_PHOTOS'});
-    fetch(`http://localhost:3001/mars`,{
-      method: 'GET'
-    })
-    .then(response => response.json())
-    .then(data => dispatch({type: 'ADD_MARS_PHOTO_TO_STATE', data: data}))
-
-  }
-}
-
 export function addComment(author, content, date){
   return (dispatch)=>{
     const body = JSON.stringify({author: author, content: content})
@@ -59,3 +46,18 @@ export function addComment(author, content, date){
     .then(data => dispatch({type: 'ADD_ALL_PHOTOS_TO_STATE', data: data }))
   }
 }
+
+
+//
+//mars feature 
+// export function fetchMarsPhotos(){
+//   return (dispatch) => {
+//     dispatch({type: 'FETCH_MARS_PHOTOS'});
+//     fetch(`http://localhost:3001/mars`,{
+//       method: 'GET'
+//     })
+//     .then(response => response.json())
+//     .then(data => dispatch({type: 'ADD_MARS_PHOTO_TO_STATE', data: data}))
+//
+//   }
+// }

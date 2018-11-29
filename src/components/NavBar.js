@@ -24,5 +24,3 @@ const NavBar = () => {
 }
 
 export default NavBar
-
-/* <SignIn /> */
