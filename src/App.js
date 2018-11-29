@@ -4,7 +4,6 @@ import PhotosContainer from './containers/PhotosContainer'
 import { BrowserRouter as Router, Route} from "react-router-dom"
 import Home from './components/Home'
 import NavBar from './components/NavBar'
-import MarsContainer from './containers/MarsContainer'
 
 
 import SearchPhoto from './components/SearchPhoto'
@@ -18,7 +17,7 @@ class App extends Component {
         <Route exact path="/" component={Home}/>
         <Route exact path="/search" component={SearchPhoto}/>
         <Route exact path="/photos/:date" component={PhotosContainer}/>
-        <Route exact path="/mars" component={MarsContainer} />
+
       </div>
     </Router>
     );

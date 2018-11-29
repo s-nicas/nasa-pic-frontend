@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchMarsPhotos } from '../actions/picActions'
-import MarsPictures from '../components/MarsPictures'
+import MarsPictures from '../components/pictures/MarsPictures'
 
 class MarsContainer extends Component {
 
@@ -27,3 +27,6 @@ class MarsContainer extends Component {
   }
 
 export default connect(mapStateToProps, mapDispatchToProps)(MarsContainer)
+
+
+// add to app.js to return and import mars
