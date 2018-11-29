@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import Slide from './Slide'
-import LeftArrow from './LeftArrow'
-import RightArrow from './RightArrow'
+import Slide from '../components/Slider/Slide'
+import LeftArrow from '../components/Slider/LeftArrow'
+import RightArrow from '../components/Slider/RightArrow'
 import { connect } from 'react-redux'
 // import {fetchAllPhotos} from '..src/actions/picActions'
 
 
-class PicSlider extends Component {
+class PicSliderContainer extends Component {
   constructor(props) {
   super(props)
 
@@ -93,4 +93,4 @@ function mapStateToProps(state){
   return {photos: state.pictures}
 }
 
-export default connect(mapStateToProps)(PicSlider)
+export default connect(mapStateToProps)(PicSliderContainer)
