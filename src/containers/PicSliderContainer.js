@@ -11,23 +11,14 @@ class PicSliderContainer extends Component {
   super(props)
 
   this.state = {
-    images: [],
+    images: props.images,
     currentIndex: 0,
     translateValue: 0
   }
 }
 
-  componentWillMount(){
-    // action to update store - how can I update state after this.
+  componentDidMount(){
     this.props.fetchAllPhotos()
-    // without using this.
-    fetch(`http://localhost:3001/pictures`,{
-       method: 'GET'
-     })
-     .then(response => response.json())
-     .then(data => this.setState({
-       images: data
-     }))
   }
 
   goToPrevSlide = () => {
@@ -41,7 +32,7 @@ class PicSliderContainer extends Component {
     }
 
    goToNextSlide = () => {
-     if(this.state.currentIndex === this.state.images.length - 1) {
+     if(this.state.currentIndex === this.props.images.length - 1) {
        return this.setState({
          currentIndex: 0,
          translateValue: 0
@@ -72,8 +63,7 @@ class PicSliderContainer extends Component {
              transition: 'transform ease-out 0.45s'
            }}>
              {
-               this.state.images.filter(photos => photos.media_type === "image")
-               .map((image, i) => (
+               this.props.images.map((image, i) => (
                  <Slide key={i} image={image.url} />
                ))
              }
@@ -97,4 +87,10 @@ function mapStateToProps(state){
   return {images: state.pictures}
 }
 
-export default connect(mapStateToProps, {fetchAllPhotos})(PicSliderContainer)
+function mapDispatchToProps(dispatch){
+  return {fetchAllPhotos: () => dispatch(fetchAllPhotos())}
+}
+
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(PicSliderContainer)
