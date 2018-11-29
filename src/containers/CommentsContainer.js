@@ -93,7 +93,7 @@ import CommentsForm from '../components/comments/CommentsForm'
 
 function mapStateToProps(state){
   return {
-    photo: state.pictures,
+    photo: state.picture,
     comments: state.comments
   }
 }
