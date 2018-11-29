@@ -15,8 +15,8 @@ const NavBar = () => {
         </NavItem>
       </Nav>
       <Nav pullRight>
-        <NavItem eventKey={1} >
-
+        <NavItem eventKey={1} href="/photos">
+          Browse
         </NavItem>
       </Nav>
     </Navbar >
