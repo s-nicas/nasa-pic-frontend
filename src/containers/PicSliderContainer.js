@@ -11,7 +11,6 @@ class PicSliderContainer extends Component {
   super(props)
 
   this.state = {
-    images: props.images,
     currentIndex: 0,
     translateValue: 0
   }
