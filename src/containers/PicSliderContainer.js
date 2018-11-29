@@ -11,7 +11,7 @@ class PicSliderContainer extends Component {
   super(props)
 
   this.state = {
-    images: props.images,
+    images: [],
     currentIndex: 0,
     translateValue: 0
   }
@@ -28,15 +28,7 @@ class PicSliderContainer extends Component {
      }))
   }
 
-
-  addToState = () => {
-      this.setState({
-      images: this.props.images
-    })
-  }
-
   goToPrevSlide = () => {
-    console.log(this.state)
       if(this.state.currentIndex === 0)
         return;
 
@@ -65,6 +57,8 @@ class PicSliderContainer extends Component {
       return document.querySelector('.slide').clientWidth
    }
 
+
+
    render() {
 
      return (
@@ -76,7 +70,8 @@ class PicSliderContainer extends Component {
              transition: 'transform ease-out 0.45s'
            }}>
              {
-               this.state.images.map((image, i) => (
+               this.state.images.filter(photos => photos.media_type === "image")
+               .map((image, i) => (
                  <Slide key={i} image={image.url} />
                ))
              }
