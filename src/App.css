@@ -1,10 +1,3 @@
-/* .Home-Pic{
-    margin: auto;
-    width: 80%;
-    border: 3px solid black;
-    padding: 5px;
-} */
-
 
 .App{
   text-align: center;
@@ -31,12 +24,16 @@
   display: flex;
   margin-top: 0px;
   position:relative;
-    background-color: #282c34;
+  background-color: #282c34;
 
 }
 
-#button{
-  color: black
+#closeButton{
+  margin-right: 700px
+}
+#commentsView{
+  color: black;
+  overflow: auto
 }
 
 #SignIn{
@@ -47,37 +44,11 @@
   margin-top: 70px
 }
 
-/* .App {
-  text-align: center;
-  background-color: #282c34;
+#commentsForm{
+  margin-bottom: 1px;
+}
 
+.modal {
 
-} */
-
-/* .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-} */
-
-/* .App-header {
-  background-color: #282c34;
-   min-height: 100vh;
-
-  flex-direction: column;
-  align-items: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-} */
-
-/* .App-link {
-  color: #61dafb;
-} */
-
-/* @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
+    overflow-y: scroll;
+}

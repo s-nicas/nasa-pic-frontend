@@ -1,9 +1,9 @@
 import React, {Component} from 'react'
 import { fetchTodaysPhoto } from '../actions/picActions'
-import PhotoInfo from './PhotoInfo'
+import Photos from './pictures/Photos'
 import { connect } from 'react-redux'
 import InformationPopOver from '../components/InformationPopOver'
-import CommentsInput from '../components/CommentsInput'
+import CommentsContainer from '../containers/CommentsContainer'
 
 
 class Home extends Component {
@@ -25,9 +25,9 @@ class Home extends Component {
     render(){
       return(
       <div >
-        <PhotoInfo photoInfo={this.props.photo} />
+        <Photos photoInfo={this.props.photo} />
         <InformationPopOver photo={this.props.photo}/>
-        <CommentsInput />
+        <CommentsContainer />
       </div>
       )
     }

@@ -54,6 +54,8 @@ import CommentsForm from '../components/comments/CommentsForm'
       if (!this.state.author || !this.state.content) {
         return alert('Woops - please complete the form')
       }
+      return true
+
     }
 
 
@@ -74,18 +76,14 @@ import CommentsForm from '../components/comments/CommentsForm'
                     <button id='closeButton' onClick={this.closeModal}>Close</button>
 
                     <h1>Tell us what you think</h1>
+                      <CommentsForm
+                        value={this.state.author}
+                        handleAuthorOnChange={this.handleAuthorOnChange}
+                        contentValue={this.state.content}
+                        handleContentOnChange={this.handleContentOnChange}
+                        handleOnCommentSubmit={this.handleOnCommentSubmit}
+                      />
                     <Comments comments={this.props.comments} />
-
-                    <CommentsForm
-                      value={this.state.author}
-                      handleAuthorOnChange={this.handleAuthorOnChange}
-                      contentValue={this.state.content}
-                      handleContentOnChange={this.handleContentOnChange}
-                      handleOnCommentSubmit={this.handleOnCommentSubmit}
-                    />
-
-
-
                   </div>
                 </Modal>
             </section>

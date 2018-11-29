@@ -8,7 +8,7 @@ import MarsContainer from './containers/MarsContainer'
 import SignIn from './components/SignIn'
 
 
-import SearchInput from './components/SearchInput'
+import SearchPhoto from './components/SearchPhoto'
 
 class App extends Component {
   render() {
@@ -17,7 +17,7 @@ class App extends Component {
       <div className="App">
         <NavBar/>
         <Route exact path="/" component={Home}/>
-        <Route exact path="/search" component={SearchInput}/>
+        <Route exact path="/search" component={SearchPhoto}/>
         <Route exact path="/photos/:date" component={PhotosContainer}/>
         <Route exact path="/mars" component={MarsContainer} />
         <Route exact path="/signin" component={SignIn} />
@@ -28,5 +28,3 @@ class App extends Component {
 }
 
 export default App;
-
-  // <Route exact path="/" component={SearchInput}/>

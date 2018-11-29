@@ -17,7 +17,7 @@ const NavBar = () => {
       </Nav>
       <Nav pullRight>
         <NavItem eventKey={1} >
-          <SignIn />
+          
         </NavItem>
       </Nav>
     </Navbar >
@@ -25,3 +25,5 @@ const NavBar = () => {
 }
 
 export default NavBar
+
+/* <SignIn /> */

@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 
 const CommentForm = props => {
   return (
-    <form onSubmit={props.handleOnCommentSubmit}>
+    <form id="commentsForm" onSubmit={props.handleOnCommentSubmit}>
       <label >
-        Title:
+      By:
         <input type="text"
-          name="title"
+          name="author"
           value={props.value}
-          onChange={props.handleTitleOnChange}
+          onChange={props.handleAuthorOnChange}
         />
       </label>
       <label>

@@ -4,9 +4,10 @@ import { fetchPhoto } from '../actions/picActions'
 import { connect } from 'react-redux'
 import { Redirect } from "react-router-dom";
 
-class SearchInput extends Component {
-   state = {date: '',
-   redirect: false
+class SearchPhoto extends Component {
+   state = {
+     date: '',
+     redirect: false
   };
 
   handleOnChange = (event) => {
@@ -36,7 +37,6 @@ class SearchInput extends Component {
     }
   }
 
-
    todaysDate = () => {
      function twoDigit(n) { return (n < 10 ? '0' : '') + n; }
 
@@ -48,7 +48,7 @@ class SearchInput extends Component {
     return (
 
       <div className="SearchBar">
-        <h3>Search NASA's Archive of Daily Photos</h3>
+        <h3>Search NASAs Archive of Daily Photos</h3>
 
           <form className="text-center">
             <input
@@ -66,6 +66,4 @@ class SearchInput extends Component {
   }
 }
 
-
-
-export default connect(null, {fetchPhoto})(SearchInput)
+export default connect(null, {fetchPhoto})(SearchPhoto)

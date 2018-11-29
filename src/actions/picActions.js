@@ -10,6 +10,8 @@ export function fetchPhoto(date) {
 
 }
 
+//
+
 
 export function fetchTodaysPhoto() {
   return (dispatch) => {
@@ -36,46 +38,81 @@ export function fetchMarsPhotos(){
 }
 
 
-export function signIn(username, password) {
+// export function signIn(username, password) {
+//
+//     return (dispatch) => {
+//        const body = JSON.stringify({username: username, password:password})
+// console.log(body)
+//         dispatch({ type: "BEGIN_USER_REQUEST" })
+//         return fetch(`http://localhost:3001/signin`, {
+//             method: 'POST',
+//             headers: {
+//               'Accept': 'application/json',
+//               body: body
+//             }
+//         })
+//             .then(resp => resp.json())
+//
+//             .then(userInfo => {
+//                 if(userInfo.error){
+//                     window.alert(userInfo.error)
+//                 }else {
+//                     localStorage.setItem("jwtToken", userInfo.jwt)
+//                     localStorage.setItem("currentUser", userInfo.user.username)
+//                     dispatch({ type: "LOGIN", payload: userInfo })
+//                 }
+//
+//             })
+//     }
+//
+// }
 
-  return (dispatch) => {
-     const body = JSON.stringify({username: username, password:password})
+//
+//
+// export function signUp(username, password){
+//
+// }
 
-      dispatch({ type: "BEGIN_USER_REQUEST" })
-      return fetch(`http://localhost:3001/signin`, {
-          method: 'POST',
-          headers: {
-            'Accept': 'application/json',
-            body: body
-          }
-      })
-          .then(resp => resp.json())
 
-          .then(userInfo => {
-              if(userInfo.error){
-                  window.alert(userInfo.error)
-              }else {
-                  localStorage.setItem("jwtToken", userInfo.jwt)
-                  localStorage.setItem("currentUser", userInfo.user.username)
-                  dispatch({ type: "LOGIN", payload: userInfo })
-              }
 
-      })
+ // POST   /pictures/:picture_id/comments
+
+
+export function addComment(author, content, date){
+
+  return (dispatch)=>{
+    const body = JSON.stringify({author: author, content: content})
+    dispatch({type:"COMMENT_REQUEST"})
+    return fetch(`http://localhost:3001/pictures/${date}/comments`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: body
+    })
+    .then(response => response.json())
+    .then(data => dispatch({type: 'ADD_COMMENT_TO_STATE', data: data}))
+    // return
   }
 
-}
+ }
 
 
-export function signUp(username, password){
-    return (dispatch)=>{
-        const body = JSON.stringify({username: username, password: password})
-        dispatch({ type: "BEGIN_USER_REQUEST"})
-        return fetch('http://localhost:3001/signup', {
-            method: 'POST',
-            body: body,
-            headers: { "Content-type": 'application/json' },
-        })
-        .then( resp => resp.json())
-    }
+// return fetch(`http://localhost:3001/signin`, {
+// //             method: 'POST',
+//             headers: {
+//               'Accept': 'application/json',
+//               body: body
+//             }
+//         })
 
-}
+
+// return (dispatch) => {
+//        const body = JSON.stringify({username: username, password:password})
+// console.log(body)
+//         dispatch({ type: "BEGIN_USER_REQUEST" })
+//         return fetch(`http://localhost:3001/signin`, {
+//             method: 'POST',
+//             headers: {
+//               'Accept': 'application/json',
+//               body: body
+//             }
+//         })
