@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import { fetchTodaysPhoto } from '../actions/picActions'
 import Photos from './pictures/Photos'
 import { connect } from 'react-redux'
-import InformationPopOver from '../components/InformationPopOver'
+import InformationPopOver from '../components/pictures/InformationPopOver'
 import CommentsContainer from '../containers/CommentsContainer'
 
 
