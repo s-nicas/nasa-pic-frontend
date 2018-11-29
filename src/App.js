@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import PhotosContainer from './containers/PhotosContainer'
 import { BrowserRouter as Router, Route} from "react-router-dom"
-import Home from './components/Home'
+import Home from './containers/Home'
 import NavBar from './components/NavBar'
 import PicSliderContainer from './containers/PicSliderContainer'
 

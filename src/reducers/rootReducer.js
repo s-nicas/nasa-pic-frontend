@@ -15,6 +15,8 @@ export default function rootsReducer(state = {
     case 'ADD_COMMENT_TO_STATE':
       const comment = action.data
       return {...state, commentRequestInProgress: false, comments: state.comments.concat(comment) }
+    case 'FETCH_ALL_PHOTOS':
+      return {isFetchingPhoto: true, pictures: []}
     case 'ADD_ALL_PHOTOS_TO_STATE':
       return {isFetchingPhoto: false, pictures: action.data}
 

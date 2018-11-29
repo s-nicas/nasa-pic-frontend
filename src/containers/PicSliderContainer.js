@@ -11,26 +11,19 @@ class PicSliderContainer extends Component {
   super(props)
 
   this.state = {
-    images: [],
+    images: props.images,
     currentIndex: 0,
     translateValue: 0
   }
 }
 
   componentDidMount(){
-    // this.props.fetchAllPhotos();
-    // dispatch({type: 'FETCH_ALL_PHOTOS'});
-    fetch(`http://localhost:3001/pictures`,{
-      method: 'GET'
-    })
-    .then(response => response.json())
-    .then(data => this.setState({
-      images: data
-    }))
+    this.props.fetchAllPhotos();
 
   }
 
   goToPrevSlide = () => {
+    console.log(this)
       if(this.state.currentIndex === 0)
         return;
 
@@ -90,7 +83,7 @@ class PicSliderContainer extends Component {
 
 
 function mapStateToProps(state){
-  return {photos: state.pictures}
+  return {images: state.pictures}
 }
 
 export default connect(mapStateToProps, {fetchAllPhotos})(PicSliderContainer)
