@@ -1,6 +1,5 @@
 import React from 'react'
 import { Navbar, Nav, NavItem} from 'react-bootstrap'
-import SignIn from './SignIn'
 
 const NavBar = () => {
   return (
@@ -17,7 +16,7 @@ const NavBar = () => {
       </Nav>
       <Nav pullRight>
         <NavItem eventKey={1} >
-          
+
         </NavItem>
       </Nav>
     </Navbar >

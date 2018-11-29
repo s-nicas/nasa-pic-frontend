@@ -39,7 +39,7 @@ function mapDispatchToProps(dispatch){
 
 
 function mapStateToProps(state){
-  return {photo: state.pictures}
+  return {photo: state.picture}
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home)

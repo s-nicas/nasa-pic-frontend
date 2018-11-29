@@ -23,7 +23,7 @@ class MarsContainer extends Component {
   }
 
   function mapStateToProps(state){
-    return {photos: state.pictures}
+    return {photos: state.marsPictures}
   }
 
 export default connect(mapStateToProps, mapDispatchToProps)(MarsContainer)
