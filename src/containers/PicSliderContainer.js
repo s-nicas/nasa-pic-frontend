@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Slide from '../components/Slider/Slide'
-import LeftArrow from '../components/Slider/LeftArrow'
-import RightArrow from '../components/Slider/RightArrow'
+import Slide from '../components/slider/Slide'
+import LeftArrow from '../components/slider/LeftArrow'
+import RightArrow from '../components/slider/RightArrow'
 import { connect } from 'react-redux'
 import {fetchAllPhotos} from '../actions/picActions'
 
@@ -18,7 +18,9 @@ class PicSliderContainer extends Component {
 }
 
   componentWillMount(){
+    // action to update store - how can I update state after this.
     this.props.fetchAllPhotos()
+    // without using this.
     fetch(`http://localhost:3001/pictures`,{
        method: 'GET'
      })
