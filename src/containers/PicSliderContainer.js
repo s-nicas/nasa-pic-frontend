@@ -3,7 +3,7 @@ import Slide from '../components/Slider/Slide'
 import LeftArrow from '../components/Slider/LeftArrow'
 import RightArrow from '../components/Slider/RightArrow'
 import { connect } from 'react-redux'
-// import {fetchAllPhotos} from '..src/actions/picActions'
+import {fetchAllPhotos} from '../actions/picActions'
 
 
 class PicSliderContainer extends Component {
@@ -93,4 +93,4 @@ function mapStateToProps(state){
   return {photos: state.pictures}
 }
 
-export default connect(mapStateToProps)(PicSliderContainer)
+export default connect(mapStateToProps, {fetchAllPhotos})(PicSliderContainer)
