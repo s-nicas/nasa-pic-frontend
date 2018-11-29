@@ -17,13 +17,26 @@ class PicSliderContainer extends Component {
   }
 }
 
-  componentDidMount(){
-    this.props.fetchAllPhotos();
+  componentWillMount(){
+    this.props.fetchAllPhotos()
+    fetch(`http://localhost:3001/pictures`,{
+       method: 'GET'
+     })
+     .then(response => response.json())
+     .then(data => this.setState({
+       images: data
+     }))
+  }
 
+
+  addToState = () => {
+      this.setState({
+      images: this.props.images
+    })
   }
 
   goToPrevSlide = () => {
-    console.log(this)
+    console.log(this.state)
       if(this.state.currentIndex === 0)
         return;
 
@@ -53,6 +66,7 @@ class PicSliderContainer extends Component {
    }
 
    render() {
+
      return (
        <div className="slider">
 
