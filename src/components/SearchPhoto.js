@@ -16,7 +16,6 @@ class SearchPhoto extends Component {
     })
   }
 
-
   handleOnSubmit = (event) => {
     event.preventDefault()
     if (!this.state.date) {
@@ -27,13 +26,11 @@ class SearchPhoto extends Component {
         redirect: true
       })
     }
-
   }
 
   handleRedirect = () => {
     if (this.state.redirect){
       return <Redirect to={`/photos/${this.state.date}`}/>
-
     }
   }
 
@@ -49,7 +46,6 @@ class SearchPhoto extends Component {
 
       <div className="SearchBar">
         <h3>Search NASAs Archive of Daily Photos</h3>
-
           <form className="text-center">
             <input
               type="date"
@@ -58,10 +54,10 @@ class SearchPhoto extends Component {
               max={this.todaysDate()}
             />
             {this.handleRedirect()}
-            <Button type="submit" onClick={this.handleOnSubmit}>Search</Button>
+            <Button id="SearchBarButton" type="submit" onClick={this.handleOnSubmit}>Search</Button>
           </form>
-
       </div>
+
     )
   }
 }
