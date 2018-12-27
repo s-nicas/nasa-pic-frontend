@@ -7,10 +7,17 @@ export default class InformationPopOver extends React.Component {
       popoverOpen: false,
     };
 
-  toggle = () =>{
+  toggle = () => {
     this.setState({
       popoverOpen: !this.state.popoverOpen
     })
+  }
+
+  displayCopyright = () => {
+    if (this.props.photo.copyright) {
+      return `Copyright: ${this.props.photo.copyright}`
+    }
+
   }
 
   render() {
@@ -24,7 +31,7 @@ export default class InformationPopOver extends React.Component {
           <PopoverBody>
             {this.props.photo.explanation}
           </PopoverBody>
-          <p><b>Copyright </b> {this.props.photo.copyright}</p>
+          <p><i>{this.displayCopyright()}</i></p>
         </Popover>
       </div>
     );
