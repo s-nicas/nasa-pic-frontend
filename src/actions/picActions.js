@@ -1,5 +1,4 @@
 export function fetchPhoto(date) {
-
   return (dispatch) => {
     dispatch({type: 'FETCH_PHOTO'});
     fetch(`http://localhost:3001/pictures/${date}`, {
