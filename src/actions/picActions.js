@@ -20,7 +20,7 @@ export function fetchTodaysPhoto() {
 }
 
 export function addComment(author, content, date) {
-  return (dispatch)=>{
+  return (dispatch) => {
     const body = JSON.stringify({author: author, content: content})
     dispatch({type:"COMMENT_REQUEST"})
     return fetch(`http://localhost:3001/pictures/${date}/comments`, {
@@ -30,7 +30,6 @@ export function addComment(author, content, date) {
     })
     .then(response => response.json())
     .then(data => dispatch({type: 'ADD_COMMENT_TO_STATE', data: data}))
-
   }
 }
 
