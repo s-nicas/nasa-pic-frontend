@@ -26,8 +26,8 @@ class Home extends Component {
 
       return (
         <div>
-          <Photos photoInfo={this.props.photo} />
-          <InformationPopOver photo={this.props.photo} />
+          <Photos photoInfo={ this.props.photo } />
+          <InformationPopOver photo={ this.props.photo } />
           <CommentsContainer />
         </div>
       )
