@@ -1,95 +1,89 @@
 import React, { Component } from 'react';
-import Slide from '../components/slider/Slide'
-import LeftArrow from '../components/slider/LeftArrow'
-import RightArrow from '../components/slider/RightArrow'
-import { connect } from 'react-redux'
-import {fetchAllPhotos} from '../actions/picActions'
+import { connect } from 'react-redux';
+import Slide from '../components/slider/Slide';
+import Titles from '../components/slider/Title';
+import LeftArrow from '../components/slider/LeftArrow';
+import RightArrow from '../components/slider/RightArrow';
+import { fetchAllPhotos } from '../actions/picActions';
 
 
 class PicSliderContainer extends Component {
-  constructor(props) {
-  super(props)
 
-  this.state = {
-    currentIndex: 0,
-    translateValue: 0
+  constructor( props ) {
+    super( props )
+
+    this.state = {
+      currentIndex: 0,
+      translateValue: 0
+    }
   }
-}
 
-  componentDidMount(){
+  componentDidMount() {
     this.props.fetchAllPhotos()
   }
 
+
   goToPrevSlide = () => {
-      if(this.state.currentIndex === 0)
-        return;
+    if( this.state.currentIndex === 0 )
+      return;
 
-      this.setState(prevState => ({
-        currentIndex: prevState.currentIndex - 1,
-        translateValue: prevState.translateValue + this.slideWidth()
-      }))
+    this.setState( prevState => ({
+      currentIndex: prevState.currentIndex - 1,
+      translateValue: prevState.translateValue + this.slideWidth()
+    }) )
+  }
+
+  goToNextSlide = () => {
+    if( this.state.currentIndex === this.props.images.length - 1 ) {
+      return this.setState({
+        currentIndex: 0,
+        translateValue: 0
+      })
     }
+    this.setState( prevState => ({
+      currentIndex: prevState.currentIndex + 1,
+      translateValue: prevState.translateValue + -( this.slideWidth() )
+    }) );
+  }
 
-   goToNextSlide = () => {
-     if(this.state.currentIndex === this.props.images.length - 1) {
-       return this.setState({
-         currentIndex: 0,
-         translateValue: 0
-       })
-     }
-
-     // This will not run if we met the if condition above
-     this.setState(prevState => ({
-       currentIndex: prevState.currentIndex + 1,
-       translateValue: prevState.translateValue + -(this.slideWidth())
-     }));
-   }
-
-   slideWidth = () => {
-      return document.querySelector('.slide').clientWidth
-   }
+  slideWidth = () => {
+    return document.querySelector( '.slide' ).clientWidth
+  }
 
 
+  render() {
 
-   render() {
+    return (
+      <div className="slider">
 
-     return (
-       <div className="slider">
+        <div className="slider-wrapper"
+          style={{
+            transform: `translateX(${ this.state.translateValue }px)`,
+            transition: 'transform ease-out 0.45s'
+          }}
+        >
+          { this.props.images.map(( image, i ) => (
+            <Slide key={ i } image={ image.url } media={ image.media_type } title={ image.title } /> ))
+          }
+        </div>
 
-         <div className="slider-wrapper"
-           style={{
-             transform: `translateX(${this.state.translateValue}px)`,
-             transition: 'transform ease-out 0.45s'
-           }}>
-             {
-               this.props.images.map((image, i) => (
-                 <Slide key={i} image={image.url} />
-               ))
-             }
-         </div>
+        <LeftArrow goToPrevSlide={ this.goToPrevSlide } />
 
-         <LeftArrow
-          goToPrevSlide={this.goToPrevSlide}
-         />
+        <RightArrow goToNextSlide={ this.goToNextSlide } />
 
-         <RightArrow
-          goToNextSlide={this.goToNextSlide}
-         />
-       </div>
-     );
-   }
- }
+     </div>
+    );
+  }
 
-
-
-function mapStateToProps(state){
-  return {images: state.pictures}
-}
-
-function mapDispatchToProps(dispatch){
-  return {fetchAllPhotos: () => dispatch(fetchAllPhotos())}
 }
 
 
+function mapStateToProps( state ) {
+  return { images: state.pictures }
+}
 
-export default connect(mapStateToProps, mapDispatchToProps)(PicSliderContainer)
+function mapDispatchToProps( dispatch ) {
+  return { fetchAllPhotos: () => dispatch( fetchAllPhotos() ) }
+}
+
+export default connect( mapStateToProps, mapDispatchToProps )( PicSliderContainer )
