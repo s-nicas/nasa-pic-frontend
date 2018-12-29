@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Slide from '../components/slider/Slide';
-import Titles from '../components/slider/Title';
 import LeftArrow from '../components/slider/LeftArrow';
 import RightArrow from '../components/slider/RightArrow';
 import { fetchAllPhotos } from '../actions/picActions';
@@ -63,7 +62,7 @@ class PicSliderContainer extends Component {
           }}
         >
           { this.props.images.map(( image, i ) => (
-            <Slide key={ i } image={ image.url } media={ image.media_type } title={ image.title } /> ))
+            <Slide key={ i } image={ image.url } media={ image.media_type } /> ))
           }
         </div>
 
