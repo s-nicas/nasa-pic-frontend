@@ -15,7 +15,7 @@ class Home extends Component {
   setRedirect = () => {
     this.setState({
       redirect: true
-    })
+    });
   }
 
   componentDidMount() {
@@ -23,14 +23,13 @@ class Home extends Component {
   }
 
     render() {
-
       return (
         <div>
           <Photos photoInfo={ this.props.photo } />
           <InformationPopOver photo={ this.props.photo } />
           <CommentsContainer />
         </div>
-      )
+      );
     }
 }
 

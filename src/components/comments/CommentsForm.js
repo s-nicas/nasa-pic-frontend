@@ -21,8 +21,8 @@ const CommentForm = props => {
       </label>
       <input type="submit" value="Submit" />
     </form>
-  )
-  
+  );
+
 }
 
 export default CommentForm

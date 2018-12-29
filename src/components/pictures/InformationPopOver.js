@@ -3,9 +3,9 @@ import { Button, Popover, PopoverHeader, PopoverBody} from 'reactstrap';
 
 export default class InformationPopOver extends React.Component {
 
-    state = {
-      popoverOpen: false,
-    };
+  state = {
+    popoverOpen: false,
+  };
 
   toggle = () => {
     this.setState({
@@ -17,7 +17,6 @@ export default class InformationPopOver extends React.Component {
     if ( this.props.photo.copyright ) {
       return `Copyright: ${ this.props.photo.copyright }`
     }
-
   }
 
   render() {
@@ -36,4 +35,5 @@ export default class InformationPopOver extends React.Component {
       </div>
     );
   }
+  
 }

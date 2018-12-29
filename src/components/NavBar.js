@@ -1,7 +1,10 @@
 import React from 'react'
 import { Navbar, Nav, NavItem} from 'react-bootstrap'
+import { Route, RouteHandler, Link, Redirect } from 'react-router';
+import { LinkContainer } from 'react-router-bootstrap';
 
 const NavBar = () => {
+  
   return (
     <Navbar>
       <Navbar.Header>
@@ -10,17 +13,22 @@ const NavBar = () => {
         </Navbar.Brand>
       </Navbar.Header>
       <Nav>
-        <NavItem eventKey={2} href="/search">
+        <LinkContainer to="/search">
+        <NavItem eventKey={2} >
           Daily Photo Archive
         </NavItem>
+        </LinkContainer>
       </Nav>
       <Nav pullRight>
-        <NavItem eventKey={1} href="/photos">
-          Browse
-        </NavItem>
+        <LinkContainer to="/photos">
+          <NavItem eventKey={1} >
+            Browse
+          </NavItem>
+        </LinkContainer>
       </Nav>
     </Navbar >
-  )
+  );
+
 }
 
 export default NavBar

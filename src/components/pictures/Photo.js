@@ -22,6 +22,6 @@ export default class Photo extends Component {
          <h3> { this.props.title } </h3>
          { this.mediaType(this.props) }
       </div>
-    )
+    );
   }
 }

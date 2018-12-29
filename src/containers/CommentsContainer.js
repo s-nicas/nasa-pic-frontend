@@ -30,13 +30,13 @@ import CommentsForm from '../components/comments/CommentsForm';
     handleAuthorOnChange = ( event ) => {
       this.setState({
         author: event.target.value
-      })
+      });
     }
 
     handleContentOnChange = ( event ) => {
       this.setState({
         content: event.target.value
-      })
+      });
     }
 
     handleOnCommentSubmit = ( event ) => {
@@ -46,7 +46,7 @@ import CommentsForm from '../components/comments/CommentsForm';
         this.setState({
           author: '',
           content: ''
-        })
+        });
       }
     }
 
@@ -60,35 +60,34 @@ import CommentsForm from '../components/comments/CommentsForm';
 
 
     render() {
+      return (
+        <section id='commentsView'>
 
-        return (
-            <section id='commentsView'>
+          <Button className="buttonComment" onClick={ this.openModal }>Comment</Button>
+          <Modal id="commentView"
+              visible={ this.state.visible }
+              width="600"
+              height="600"
+              effect="fadeInUp"
+              onClickAway={ this.closeModal }
+          >
 
-              <Button className="buttonComment" onClick={ this.openModal }>Comment</Button>
-                <Modal id="commentView"
-                  visible={ this.state.visible }
-                  width="600"
-                  height="600"
-                  effect="fadeInUp"
-                  onClickAway={ this.closeModal }
-                >
+            <div>
+                <button id='closeButton' onClick={ this.closeModal }>Close</button>
 
-                  <div>
-                    <button id='closeButton' onClick={ this.closeModal }>Close</button>
-
-                    <h1>Tell us what you think</h1>
-                    <CommentsForm
-                      value={ this.state.author }
-                      handleAuthorOnChange={ this.handleAuthorOnChange }
-                      contentValue={ this.state.content }
-                      handleContentOnChange={ this.handleContentOnChange }
-                      handleOnCommentSubmit={ this.handleOnCommentSubmit }
-                    />
-                   <Comments comments={ this.props.comments } />
-                  </div>
-                </Modal>
-            </section>
-        );
+                <h1>Tell us what you think</h1>
+                <CommentsForm
+                  value={ this.state.author }
+                  handleAuthorOnChange={ this.handleAuthorOnChange }
+                  contentValue={ this.state.content }
+                  handleContentOnChange={ this.handleContentOnChange }
+                  handleOnCommentSubmit={ this.handleOnCommentSubmit }
+                />
+                <Comments comments={ this.props.comments } />
+            </div>
+          </Modal>
+        </section>
+      );
     }
 }
 

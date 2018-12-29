@@ -54,10 +54,8 @@ class PicSliderContainer extends Component {
   }
 
   render() {
-
     return (
       <div className="slider">
-
         <div className="slider-wrapper"
           style={{
             transform: `translateX(${ this.state.translateValue }px)`,
