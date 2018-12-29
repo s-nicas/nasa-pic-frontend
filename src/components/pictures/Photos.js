@@ -3,8 +3,8 @@ import Photo from './Photo'
 
 
 const Photos = props => {
-  if (props.photoInfo){
-    const renderPhoto = (<Photo key={1} mediaType={props.photoInfo.media_type} title={props.photoInfo.title} url={props.photoInfo.url} explanation={props.photoInfo.explanation}/>)
+  if ( props.photoInfo ){
+    const renderPhoto = (<Photo key={1} mediaType={props.photoInfo.media_type} url={props.photoInfo.url} explanation={props.photoInfo.explanation}/>)
 
     return (
       <div>
