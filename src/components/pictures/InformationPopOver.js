@@ -14,8 +14,8 @@ export default class InformationPopOver extends React.Component {
   }
 
   displayCopyright = () => {
-    if (this.props.photo.copyright) {
-      return `Copyright: ${this.props.photo.copyright}`
+    if ( this.props.photo.copyright ) {
+      return `Copyright: ${ this.props.photo.copyright }`
     }
 
   }
@@ -23,15 +23,15 @@ export default class InformationPopOver extends React.Component {
   render() {
     return (
       <div>
-        <Button className="buttonInfo" id="Popover1" onClick={this.toggle}>
+        <Button className="buttonInfo" id="Popover1" onClick={ this.toggle }>
           Read About Image
         </Button>
-        <Popover placement="bottom" isOpen={this.state.popoverOpen} target="Popover1" toggle={this.toggle}>
-          <PopoverHeader>{this.props.photo.title}</PopoverHeader>
+        <Popover placement="bottom" isOpen={ this.state.popoverOpen } target="Popover1" toggle={ this.toggle }>
+          <PopoverHeader>{ this.props.photo.title }</PopoverHeader>
           <PopoverBody>
-            {this.props.photo.explanation}
+            { this.props.photo.explanation }
           </PopoverBody>
-          <p><i>{this.displayCopyright()}</i></p>
+          <p><i>{ this.displayCopyright() }</i></p>
         </Popover>
       </div>
     );
