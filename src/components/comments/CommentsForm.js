@@ -1,6 +1,7 @@
 import React from 'react';
 
 const CommentForm = props => {
+
   return (
     <form id="commentsForm" onSubmit={ props.handleOnCommentSubmit }>
       <label>
@@ -21,6 +22,7 @@ const CommentForm = props => {
       <input type="submit" value="Submit" />
     </form>
   )
+  
 }
 
 export default CommentForm
