@@ -1,5 +1,6 @@
 import React from 'react'
 import { Navbar, Nav, NavItem} from 'react-bootstrap'
+import { LinkContainer } from 'react-router-bootstrap';
 
 const NavBar = () => {
   return (
@@ -10,9 +11,11 @@ const NavBar = () => {
         </Navbar.Brand>
       </Navbar.Header>
       <Nav>
-        <NavItem eventKey={2} href="/search">
-          Daily Photo Archive
-        </NavItem>
+        <LinkContainer to="/search">
+         <NavItem eventKey={2} >
+           Daily Photo Archive
+         </NavItem>
+       </LinkContainer>
       </Nav>
       <Nav pullRight>
         <NavItem eventKey={1} href="/photos">
