@@ -11,7 +11,7 @@ export default class Photo extends Component {
       )
     } else {
       return (
-        <img className="Home-Pic" src={ this.props.url } alt={ this.props.title } width="750px" height="650px"/>
+        <img className="Home-Pic" src={ this.props.url } alt={ this.props.title } title={ this.props.title } width="750px" height="650px"/>
       )
     }
   }
