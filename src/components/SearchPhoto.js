@@ -44,7 +44,7 @@ class SearchPhoto extends Component {
   render(){
     return (
       <div className="SearchBar">
-        <h3>Search NASAs Archive of Daily Photos</h3>
+        <h3>Search NASA's Archive of Daily Photos</h3>
           <form className="text-center">
             <input
               type="date"
