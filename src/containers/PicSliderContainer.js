@@ -8,14 +8,11 @@ import { fetchAllPhotos } from '../actions/picActions';
 
 class PicSliderContainer extends Component {
 
-  constructor( props ) {
-    super( props )
-
-    this.state = {
-      currentIndex: 0,
-      translateValue: 0
-    }
+  state = {
+    currentIndex: 0,
+    translateValue: 0
   }
+
 
   componentDidMount() {
     this.props.fetchAllPhotos()
