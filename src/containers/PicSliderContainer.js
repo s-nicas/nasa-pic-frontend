@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Slide from '../components/slider/Slide';
-import LeftArrow from '../components/slider/LeftArrow';
-import RightArrow from '../components/slider/RightArrow';
+import Slide from '../components/Slider/Slide';
+import LeftArrow from '../components/Slider/LeftArrow';
+import RightArrow from '../components/Slider/RightArrow';
 import { fetchAllPhotos } from '../actions/picActions';
 
 

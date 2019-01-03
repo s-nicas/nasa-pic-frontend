@@ -44,14 +44,3 @@ export function fetchAllPhotos() {
     .then(data => dispatch({type: 'ADD_ALL_PHOTOS_TO_STATE', data: data }))
   }
 }
-
-export function fetchAllPhotos(){
-  return (dispatch) => {
-    dispatch({type: 'FETCH_ALL_PHOTOS'});
-    fetch(`http://localhost:3001/pictures`,{
-      method: 'GET'
-    })
-    .then(response => response.json())
-    .then(data => dispatch({type: 'ADD_ALL_PHOTOS_TO_STATE', data: data }))
-  }
-}
