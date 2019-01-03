@@ -2,12 +2,12 @@ import React, {Component} from 'react'
 import { Button } from 'react-bootstrap'
 import { fetchPhoto } from '../actions/picActions'
 import { connect } from 'react-redux'
-import { Col, Fa } from "mdbreact";
 import { Redirect } from "react-router-dom";
 
-class SearchInput extends Component {
-   state = {date: '',
-   redirect: false
+class SearchPhoto extends Component {
+   state = {
+     date: '',
+     redirect: false
   };
 
   handleOnChange = (event) => {
@@ -15,7 +15,6 @@ class SearchInput extends Component {
       date: event.target.value
     })
   }
-
 
   handleOnSubmit = (event) => {
     event.preventDefault()
@@ -27,16 +26,13 @@ class SearchInput extends Component {
         redirect: true
       })
     }
-
   }
 
   handleRedirect = () => {
     if (this.state.redirect){
       return <Redirect to={`/photos/${this.state.date}`}/>
-
     }
   }
-
 
    todaysDate = () => {
      function twoDigit(n) { return (n < 10 ? '0' : '') + n; }
@@ -47,10 +43,8 @@ class SearchInput extends Component {
 
   render(){
     return (
-
       <div className="SearchBar">
         <h3>Search NASA's Archive of Daily Photos</h3>
-
           <form className="text-center">
             <input
               type="date"
@@ -59,14 +53,12 @@ class SearchInput extends Component {
               max={this.todaysDate()}
             />
             {this.handleRedirect()}
-            <Button type="submit" onClick={this.handleOnSubmit}>Search</Button>
+            <Button id="SearchBarButton" type="submit" onClick={this.handleOnSubmit}>Search</Button>
           </form>
-
       </div>
-    )
+    );
   }
+
 }
 
-
-
-export default connect(null, {fetchPhoto})(SearchInput)
+export default connect(null, {fetchPhoto})(SearchPhoto)

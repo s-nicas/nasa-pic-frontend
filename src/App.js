@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import './App.css';
 import PhotosContainer from './containers/PhotosContainer'
 import { BrowserRouter as Router, Route} from "react-router-dom"
-import Home from './components/Home'
+import Home from './containers/Home'
 import NavBar from './components/NavBar'
-import MarsContainer from './containers/MarsContainer'
-import PicSlider from './components/PicSlider'
-import SearchInput from './components/SearchInput'
+import PicSliderContainer from './containers/PicSliderContainer'
+
+
+import SearchPhoto from './components/SearchPhoto'
 
 class App extends Component {
   render() {
@@ -15,10 +16,9 @@ class App extends Component {
       <div className="App">
         <NavBar/>
         <Route exact path="/" component={Home}/>
-        <Route exact path="/search" component={SearchInput}/>
+        <Route exact path="/search" component={SearchPhoto}/>
         <Route exact path="/photos/:date" component={PhotosContainer}/>
-        <Route exact path="/mars" component={MarsContainer} />
-        <Route exact path="/photos" component={PicSlider} />
+        <Route exact path="/photos" component={PicSliderContainer} />
       </div>
     </Router>
     );
@@ -26,5 +26,3 @@ class App extends Component {
 }
 
 export default App;
-
-  // <Route exact path="/" component={SearchInput}/>
