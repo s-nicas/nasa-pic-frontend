@@ -1,4 +1,4 @@
-export default function rootsReducer( state = {
+export default function rootReducer( state = {
     isFetchingPhoto: false,
     picture: [],
     pictures:[],
