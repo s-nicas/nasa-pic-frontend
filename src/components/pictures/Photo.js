@@ -5,13 +5,13 @@ export default class Photo extends Component {
   mediaType = ( props ) => {
     if( props.mediaType === "video" ){
       return (
-        <iframe className="Home-Pic" width="540px" height="500px"
+        <iframe className="home-Pic" width="540px" height="500px"
           src={ props.url } title={ this.props.title }>
         </iframe>
       )
     } else {
       return (
-        <img className="Home-Pic" src={ this.props.url } alt={ this.props.title } title={ this.props.title } width="750px" height="650px"/>
+        <img className="home-Pic" src={ this.props.url } alt={ this.props.title } title={ this.props.title } />
       )
     }
   }
