@@ -22,11 +22,7 @@ class Home extends Component {
     this.props.fetchTodaysPhoto();
   }
 
-  componentDidUpdate(prevProps) {
-    if (this.props.photo !== prevProps.photo) {
-      this.props.fetchTodaysPhoto();
-    }
-  };
+
 
   render() {
     return (
