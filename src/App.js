@@ -5,7 +5,6 @@ import NavBar from './components/NavBar';
 import PicSliderContainer from './containers/PicSliderContainer';
 import PhotosContainer from './containers/PhotosContainer';
 import SearchPhoto from './components/SearchPhoto';
-import './App.css';
 
 
 const App = () => {

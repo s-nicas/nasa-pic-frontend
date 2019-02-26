@@ -10,14 +10,12 @@ class PicSliderContainer extends Component {
 
   state = {
     currentIndex: 0,
-    translateValue: 0
+    translateValue: 0,
   }
-
 
   componentDidMount() {
     this.props.fetchAllPhotos()
   }
-
 
   goToPrevSlide = () => {
     if( this.state.currentIndex === 0 )

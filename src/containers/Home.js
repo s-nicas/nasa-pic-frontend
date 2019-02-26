@@ -8,8 +8,8 @@ import CommentsContainer from '../containers/CommentsContainer';
 
 class Home extends Component {
 
-  state = {
-    redirect: false
+  state ={
+    redirect:false
   }
 
   setRedirect = () => {
@@ -22,15 +22,21 @@ class Home extends Component {
     this.props.fetchTodaysPhoto();
   }
 
-    render() {
-      return (
-        <div>
-          <Photos photoInfo={ this.props.photo } />
-          <InformationPopOver photo={ this.props.photo } />
-          <CommentsContainer />
-        </div>
-      );
+  componentDidUpdate(prevProps) {
+    if (this.props.photo !== prevProps.photo) {
+      this.props.fetchTodaysPhoto();
     }
+  };
+
+  render() {
+    return (
+      <div>
+        <Photos photoInfo={ this.props.photo } />
+        <InformationPopOver photo={ this.props.photo } />
+        <CommentsContainer />
+        </div>
+    );
+  }
 }
 
 function mapDispatchToProps( dispatch ){
