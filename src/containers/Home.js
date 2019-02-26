@@ -28,15 +28,15 @@ class Home extends Component {
     }
   };
 
-    render() {
-      return (
-        <div>
-          <Photos photoInfo={ this.props.photo } />
-          <InformationPopOver photo={ this.props.photo } />
-          <CommentsContainer />
+  render() {
+    return (
+      <div>
+        <Photos photoInfo={ this.props.photo } />
+        <InformationPopOver photo={ this.props.photo } />
+        <CommentsContainer />
         </div>
-      );
-    }
+    );
+  }
 }
 
 function mapDispatchToProps( dispatch ){
