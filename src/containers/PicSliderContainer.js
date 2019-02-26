@@ -13,7 +13,6 @@ class PicSliderContainer extends Component {
     translateValue: 0,
   }
 
-
   componentDidMount() {
     this.props.fetchAllPhotos()
   }
