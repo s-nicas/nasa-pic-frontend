@@ -8,8 +8,8 @@ import CommentsContainer from '../containers/CommentsContainer';
 
 class Home extends Component {
 
-  state = {
-    redirect: false
+  state ={
+    redirect:false
   }
 
   setRedirect = () => {
@@ -21,6 +21,12 @@ class Home extends Component {
   componentDidMount() {
     this.props.fetchTodaysPhoto();
   }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.photo !== prevProps.photo) {
+      this.props.fetchTodaysPhoto();
+    }
+  };
 
     render() {
       return (
